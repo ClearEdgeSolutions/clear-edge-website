@@ -11,23 +11,24 @@
   <link rel="icon" href="favicon.ico" />
   <style>
     :root {
-      --bg: #040916;
-      --bg-2: #071126;
-      --bg-3: #0b1832;
-      --panel: #0b1224;
-      --panel-2: #101827;
-      --panel-3: #131d2f;
-      --line: rgba(255, 255, 255, 0.08);
-      --line-soft: rgba(255, 255, 255, 0.05);
+      --bg: #020814;
+      --bg-2: #050d1f;
+      --bg-3: #0a1430;
+      --panel: #071126;
+      --panel-2: #0b1530;
+      --panel-3: #0d1835;
+      --line: rgba(255,255,255,0.08);
+      --line-soft: rgba(255,255,255,0.05);
       --text: #f7f8fb;
-      --muted: #c8cfdb;
-      --muted-2: #9aa6bd;
+      --muted: #dbe3ef;
+      --muted-2: #a9b5c8;
       --yellow: #f5b118;
-      --yellow-soft: #f3c95c;
+      --yellow-soft: #ffd76b;
       --yellow-deep: #d99607;
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
-      --radius: 20px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28);
+      --radius: 22px;
       --max: 1240px;
+      --header-h: 82px;
     }
 
     * { box-sizing: border-box; }
@@ -35,7 +36,7 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #020612 0%, #040916 100%);
+      background: linear-gradient(180deg, #020814 0%, #050d1f 100%);
       color: var(--text);
       overflow-x: hidden;
     }
@@ -48,19 +49,24 @@
       margin: 0 auto;
     }
 
-    /* Top bar */
+    section[id] {
+      scroll-margin-top: 118px;
+    }
+
+    /* Header */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
+      min-height: var(--header-h);
       background:
-        linear-gradient(90deg, rgba(6, 17, 44, 0.98) 0%, rgba(5, 11, 28, 0.96) 55%, rgba(6, 17, 44, 0.98) 100%);
+        linear-gradient(90deg, rgba(6, 17, 44, 0.985) 0%, rgba(5, 11, 28, 0.97) 55%, rgba(6, 17, 44, 0.985) 100%);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(10px);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: var(--header-h);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -84,7 +90,7 @@
     .brand span {
       font-size: 1.12rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -111,22 +117,45 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 24px;
+      min-height: 50px;
+      padding: 0 26px;
       border-radius: 999px;
       background: linear-gradient(135deg, #ffca34 0%, #f4b317 45%, #f29c00 100%);
       color: #111318;
       font-weight: 800;
+      font-size: 1rem;
       letter-spacing: 0.01em;
       border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 10px 24px rgba(242, 156, 0, 0.22);
+      box-shadow: 0 10px 24px rgba(242,156,0,0.22);
       transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+      white-space: nowrap;
     }
 
     .cta-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(242, 156, 0, 0.28);
+      box-shadow: 0 14px 28px rgba(242,156,0,0.28);
       filter: brightness(1.02);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #f7f8fb;
+      font-weight: 700;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.02);
+      transition: background 0.18s ease, transform 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-1px);
     }
 
     /* Hero */
@@ -134,9 +163,9 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 0% 20%, rgba(36, 76, 173, 0.18), transparent 34%),
-        radial-gradient(circle at 100% 15%, rgba(255, 255, 255, 0.08), transparent 42%),
-        linear-gradient(90deg, #07102a 0%, #182239 36%, #454e63 100%);
+        radial-gradient(circle at 8% 20%, rgba(26, 74, 180, 0.22), transparent 30%),
+        radial-gradient(circle at 100% 16%, rgba(255,255,255,0.08), transparent 40%),
+        linear-gradient(90deg, #06102b 0%, #19243d 37%, #4b5468 100%);
       border-bottom: 1px solid var(--line-soft);
     }
 
@@ -144,8 +173,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(90deg, rgba(2, 7, 18, 0.38) 0%, rgba(2, 7, 18, 0.08) 38%, rgba(255, 255, 255, 0.02) 100%);
+      background: linear-gradient(90deg, rgba(2,7,18,0.22) 0%, rgba(2,7,18,0.02) 42%, rgba(255,255,255,0.01) 100%);
       pointer-events: none;
     }
 
@@ -153,11 +181,32 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
-      gap: 46px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
       align-items: center;
-      min-height: 720px;
-      padding: 82px 0 74px;
+      min-height: calc(100vh - var(--header-h));
+      padding: 70px 0 34px;
+    }
+
+    .hero-watermark {
+      position: absolute;
+      right: -30px;
+      top: 52%;
+      transform: translateY(-50%);
+      opacity: 0.055;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-watermark img {
+      width: 520px;
+      height: auto;
+      filter: grayscale(100%) brightness(1.75) contrast(0.95);
+    }
+
+    .hero-copy-block {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-eyebrow {
@@ -174,23 +223,23 @@
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .hero h1 {
       margin: 0;
-      font-size: clamp(3.3rem, 7vw, 5.15rem);
+      font-size: clamp(3rem, 6.2vw, 5rem);
       line-height: 0.98;
       letter-spacing: -0.045em;
-      max-width: 760px;
+      max-width: 780px;
     }
 
     .hero-copy {
       max-width: 760px;
-      margin-top: 28px;
+      margin-top: 24px;
       color: #f2f4f9;
       font-size: 1.18rem;
-      line-height: 1.6;
+      line-height: 1.58;
     }
 
     .hero-copy p {
@@ -201,45 +250,26 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      color: #f7f8fb;
-      font-weight: 700;
-      background: rgba(255,255,255,0.02);
-      transition: background 0.18s ease, transform 0.18s ease;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.07);
-      transform: translateY(-1px);
+      margin-top: 28px;
     }
 
     .hero-visual {
       position: relative;
+      z-index: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 520px;
+      min-height: 450px;
     }
 
     .visual-frame {
-      width: min(100%, 540px);
+      width: min(100%, 480px);
       aspect-ratio: 1 / 1;
       border-radius: 28px;
-      border: 1px solid rgba(245, 177, 24, 0.22);
-      background:
-        linear-gradient(180deg, rgba(21, 28, 45, 0.62) 0%, rgba(10, 15, 28, 0.78) 100%);
+      border: 1px solid rgba(245,177,24,0.20);
+      background: linear-gradient(180deg, rgba(21,28,45,0.62) 0%, rgba(10,15,28,0.78) 100%);
       box-shadow: 0 28px 70px rgba(0,0,0,0.26);
-      padding: 18px;
+      padding: 16px;
       position: relative;
       overflow: hidden;
     }
@@ -249,8 +279,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(245, 177, 24, 0.10), transparent 26%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05), transparent 28%);
+        radial-gradient(circle at 20% 20%, rgba(245,177,24,0.08), transparent 26%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.04), transparent 28%);
       pointer-events: none;
     }
 
@@ -281,14 +311,13 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.16) 100%);
     }
 
     .slide-dots {
       position: absolute;
       left: 50%;
-      bottom: 18px;
+      bottom: 16px;
       transform: translateX(-50%);
       display: flex;
       gap: 8px;
@@ -304,7 +333,7 @@
     }
 
     .slide-dots span.active {
-      width: 24px;
+      width: 22px;
       background: var(--yellow-soft);
     }
 
@@ -318,7 +347,7 @@
     }
 
     .section {
-      padding: 58px 0 64px;
+      padding: 56px 0 62px;
       position: relative;
     }
 
@@ -356,10 +385,9 @@
       position: relative;
       border-radius: 20px;
       padding: 22px 22px 20px;
-      background:
-        linear-gradient(180deg, rgba(9, 18, 40, 0.98) 0%, rgba(7, 13, 31, 0.98) 100%);
-      border: 1px solid rgba(245, 201, 92, 0.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+      background: linear-gradient(180deg, rgba(8,17,39,0.98) 0%, rgba(6,12,29,0.98) 100%);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
       min-height: 146px;
     }
 
@@ -372,18 +400,27 @@
     }
 
     .icon-box {
-      width: 34px;
-      height: 34px;
-      flex: 0 0 34px;
-      border-radius: 10px;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      background: rgba(245, 177, 24, 0.12);
-      border: 1px solid rgba(245, 201, 92, 0.12);
-      color: var(--yellow-soft);
-      font-size: 1rem;
-      font-weight: 900;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 218, 108, 0.07) 0%, rgba(255, 218, 108, 0.03) 58%, rgba(255, 218, 108, 0.015) 100%);
+      border: 1px solid rgba(255, 214, 102, 0.09);
+      color: var(--yellow);
       line-height: 1;
+      box-shadow: 0 0 24px rgba(255, 211, 94, 0.04);
+    }
+
+    .icon-box svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .service-card h3,
@@ -404,47 +441,10 @@
       max-width: 96%;
     }
 
-    /* Partner section */
-    .partner-wrap {
-      border-radius: 0;
-      padding: 42px 0;
-      background:
-        linear-gradient(90deg, #182338 0%, #1c2840 42%, #21304b 100%);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .partner-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .partner-copy h2 {
-      margin: 0 0 14px;
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      text-transform: uppercase;
-    }
-
-    .partner-copy p {
-      margin: 0;
-      font-size: 1.15rem;
-      line-height: 1.55;
-      color: #eef2f8;
-      max-width: 930px;
-    }
-
-    .partner-btn {
-      white-space: nowrap;
-    }
-
     /* Contact */
     .contact-section {
       background: linear-gradient(180deg, #050d1f 0%, #091225 100%);
-      padding: 72px 0 78px;
+      padding: 72px 0 30px;
     }
 
     .contact-grid {
@@ -456,19 +456,19 @@
 
     .contact-left,
     .contact-right {
-      background:
-        linear-gradient(180deg, rgba(14, 22, 40, 0.98) 0%, rgba(11, 17, 31, 0.98) 100%);
+      background: linear-gradient(180deg, rgba(14,22,40,0.98) 0%, rgba(11,17,31,0.98) 100%);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 24px;
       box-shadow: var(--shadow);
     }
 
     .contact-left {
-      padding: 34px 32px;
+      padding: 32px 32px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      min-height: 100%;
     }
 
     .contact-left .logo-wrap {
@@ -478,8 +478,8 @@
     }
 
     .contact-left img {
-      width: 120px;
-      height: 120px;
+      width: 146px;
+      height: 146px;
       object-fit: contain;
     }
 
@@ -566,9 +566,9 @@
     input:focus,
     select:focus,
     textarea:focus {
-      border-color: rgba(245, 201, 92, 0.34);
+      border-color: rgba(245,201,92,0.34);
       background: rgba(255,255,255,0.05);
-      box-shadow: 0 0 0 3px rgba(245, 177, 24, 0.10);
+      box-shadow: 0 0 0 3px rgba(245,177,24,0.10);
     }
 
     textarea {
@@ -581,6 +581,43 @@
       border: 0;
       cursor: pointer;
       font: inherit;
+      width: fit-content;
+    }
+
+    /* Partner now at end */
+    .partner-wrap {
+      padding: 26px 0 72px;
+      background: linear-gradient(180deg, #050d1f 0%, #081129 100%);
+    }
+
+    .partner-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      border-radius: 0;
+      padding: 40px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .partner-copy h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .partner-copy p {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.55;
+      color: #eef2f8;
+      max-width: 930px;
+    }
+
+    .partner-btn {
+      white-space: nowrap;
     }
 
     .footer {
@@ -603,12 +640,16 @@
       color: #fff;
     }
 
-    /* Responsive */
     @media (max-width: 1120px) {
       .hero {
         grid-template-columns: 1fr;
         min-height: auto;
-        padding: 70px 0 58px;
+        padding: 66px 0 32px;
+      }
+
+      .hero-watermark {
+        right: -90px;
+        top: 35%;
       }
 
       .hero-visual {
@@ -616,11 +657,11 @@
       }
 
       .visual-frame {
-        width: min(100%, 660px);
+        width: min(100%, 620px);
       }
 
-      .partner-inner,
-      .contact-grid {
+      .contact-grid,
+      .partner-inner {
         grid-template-columns: 1fr;
       }
     }
@@ -645,7 +686,7 @@
       }
 
       .section {
-        padding: 52px 0 58px;
+        padding: 50px 0 56px;
       }
 
       .hero h1 {
@@ -687,6 +728,10 @@
       .visual-inner {
         border-radius: 16px;
       }
+
+      .hero-watermark img {
+        width: 320px;
+      }
     }
   </style>
 </head>
@@ -701,8 +746,8 @@
       <nav class="nav-links">
         <a href="#services">Services</a>
         <a href="#why-us">Why Us</a>
-        <a href="#partners">Partners</a>
         <a href="#contact">Contact</a>
+        <a href="#partners">Partners</a>
         <a href="#contact" class="cta-btn">Get a Quote</a>
       </nav>
     </div>
@@ -711,6 +756,10 @@
   <main id="top">
     <section class="hero-shell">
       <div class="container hero">
+        <div class="hero-watermark">
+          <img src="logo-ces.png" alt="Clear Edge Solutions watermark logo" />
+        </div>
+
         <div class="hero-copy-block">
           <div class="hero-eyebrow">Professional Cleaning Services</div>
           <h1>Professional Cleaning Services with Structured Systems and Reliable Results</h1>
@@ -737,15 +786,15 @@
             <div class="visual-inner">
               <div
                 class="hero-slide active"
-                style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80');"
-              ></div>
-              <div
-                class="hero-slide"
-                style="background-image:url('https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=1400&q=80');"
-              ></div>
-              <div
-                class="hero-slide"
                 style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80');"
+              ></div>
+              <div
+                class="hero-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80');"
+              ></div>
+              <div
+                class="hero-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80');"
               ></div>
               <div class="slide-dots">
                 <span class="active"></span>
@@ -765,7 +814,9 @@
         <div class="cards-grid">
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">✦</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 7-7"/><path d="M5 5v7h7"/></svg>
+              </div>
               <h3>Regular Cleaning</h3>
             </div>
             <p>Routine cleaning services for residential, commercial, and all types of spaces.</p>
@@ -773,7 +824,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">⬢</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 3 4 7l8 4 8-4-8-4Z"/><path d="m4 12 8 4 8-4"/><path d="m4 17 8 4 8-4"/></svg>
+              </div>
               <h3>Deep Cleaning</h3>
             </div>
             <p>A detailed, top-to-bottom cleaning that reaches areas that are often overlooked.</p>
@@ -781,7 +834,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">⟡</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="m4 4 8 8"/><path d="M5 11 11 5"/><path d="m13 13 7 7"/><path d="m14 20 6-6"/><path d="m10 14-4 4"/><path d="M8 20 4 16"/></svg>
+              </div>
               <h3>Post-Construction Cleaning</h3>
             </div>
             <p>
@@ -792,7 +847,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">↔</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M7 7h10"/><path d="m13 3 4 4-4 4"/><path d="M17 17H7"/><path d="m11 13-4 4 4 4"/></svg>
+              </div>
               <h3>Move-In / Move-Out Cleaning</h3>
             </div>
             <p>
@@ -803,7 +860,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">▣</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 20V9"/><path d="M10 20V4"/><path d="M14 20v-8"/><path d="M18 20v-5"/><path d="M4 9h6"/><path d="M10 4h4"/></svg>
+              </div>
               <h3>Commercial Cleaning</h3>
             </div>
             <p>
@@ -822,7 +881,9 @@
         <div class="cards-grid">
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">◔</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 3c-2 3-5 5.3-5 9a5 5 0 0 0 10 0c0-3.7-3-6-5-9Z"/><path d="M8 18c1 .8 2.2 1.2 4 1.2"/></svg>
+              </div>
               <h3>Pressure Washing</h3>
             </div>
             <p>Exterior surface cleaning for high-impact curb appeal and upkeep.</p>
@@ -830,7 +891,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">▦</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></svg>
+              </div>
               <h3>Window Cleaning</h3>
             </div>
             <p>Interior and exterior window care for clear, polished presentation.</p>
@@ -838,7 +901,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">⬒</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 3 4 7l8 4 8-4-8-4Z"/><path d="m4 12 8 4 8-4"/><path d="m4 17 8 4 8-4"/></svg>
+              </div>
               <h3>Floor Waxing and Stripping</h3>
             </div>
             <p>Floor restoration and protection for durable, professional finishes.</p>
@@ -846,7 +911,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">⇄</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M7 7h10"/><path d="m13 3 4 4-4 4"/><path d="M17 17H7"/><path d="m11 13-4 4 4 4"/></svg>
+              </div>
               <h3>Move In / Move Out Assistance</h3>
             </div>
             <p>
@@ -857,7 +924,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">🛠</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="m14 7 3 3"/><path d="M5 19l6-6"/><path d="m4 20 4-1 10-10-3-3L5 16l-1 4Z"/><path d="M14 7 12 5"/></svg>
+              </div>
               <h3>Handyman Services</h3>
             </div>
             <p>
@@ -868,7 +937,9 @@
 
           <article class="service-card">
             <div class="card-top">
-              <div class="icon-box">⌘</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M5 5h14"/><path d="M5 12h14"/><path d="M5 19h14"/></svg>
+              </div>
               <h3>Consulting</h3>
             </div>
             <p>Operational guidance to design practical cleaning plans for each property.</p>
@@ -888,7 +959,9 @@
         <div class="cards-grid">
           <article class="why-card">
             <div class="card-top">
-              <div class="icon-box">✦</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg>
+              </div>
               <h3>Structured Systems</h3>
             </div>
             <p>
@@ -899,7 +972,9 @@
 
           <article class="why-card">
             <div class="card-top">
-              <div class="icon-box">◉</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/></svg>
+              </div>
               <h3>Active Quality Control</h3>
             </div>
             <p>
@@ -910,7 +985,9 @@
 
           <article class="why-card">
             <div class="card-top">
-              <div class="icon-box">☰</div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h10"/><path d="M4 17h13"/></svg>
+              </div>
               <h3>Clear Communication &amp; Reliable Outcomes</h3>
             </div>
             <p>
@@ -919,27 +996,6 @@
             </p>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section id="partners" class="partner-wrap">
-      <div class="container partner-inner">
-        <div class="partner-copy">
-          <h2>Partner With Clear Edge Solutions</h2>
-          <p>
-            Our network is built with independent professionals and service companies that meet our
-            standards for quality, communication, and execution.
-          </p>
-        </div>
-
-        <a
-          class="cta-btn partner-btn"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSeVnphw-x2aCQw9wiHbUvYB72KcAwJ7SY1snH8E8RgVchMz0w/viewform?ouid=107478162987297321195&usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Become a Partner
-        </a>
       </div>
     </section>
 
@@ -1009,6 +1065,27 @@
         </div>
       </div>
     </section>
+
+    <section id="partners" class="partner-wrap">
+      <div class="container partner-inner">
+        <div class="partner-copy">
+          <h2>Partner With Clear Edge Solutions</h2>
+          <p>
+            Our network is built with independent professionals and service companies that meet our
+            standards for quality, communication, and execution.
+          </p>
+        </div>
+
+        <a
+          class="cta-btn partner-btn"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeVnphw-x2aCQw9wiHbUvYB72KcAwJ7SY1snH8E8RgVchMz0w/viewform?ouid=107478162987297321195&usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Become a Partner
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -1041,5 +1118,3 @@
   </script>
 </body>
 </html>
-
-
