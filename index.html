@@ -973,6 +973,30 @@
           target="_blank" rel="noopener noreferrer">
           Become a Partner
         </a>
+        <script>
+const form = document.querySelector('form[name="clear-edge-quote"]');
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const data = new URLSearchParams(formData).toString();
+
+  await fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: data
+  });
+
+  await fetch("/.netlify/functions/submit-to-sheets", {
+    method: "POST",
+    body: data
+  });
+
+  alert("Sent!");
+  form.reset();
+});
+</script>
       </div>
     </section>
 
