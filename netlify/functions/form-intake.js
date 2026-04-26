@@ -1,79 +1,97 @@
 exports.handler = async (event) => {
-  const json = (statusCode, body) => ({
-    statusCode,
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Allow-Methods": "POST, OPTIONS"
-    },
-    body: JSON.stringify(body)
-  });
+  console.log("🚀 Function triggered");
 
-  if (event.httpMethod === "OPTIONS") return json(200, { ok: true });
-  if (event.httpMethod !== "POST") return json(405, { ok: false, error: "Method not allowed" });
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: "Method Not Allowed",
+    };
+  }
 
   try {
-    const SUPABASE_URL = (process.env.SUPABASE_URL || "https://sjgrbcqgkxwvzetjhutf.supabase.co").replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "");
-    const SUPABASE_KEY = process.env.SUPABASE_ANON_KEY || process.env.SUPABASE_KEY;
+    const data = JSON.parse(event.body);
+    console.log("📥 Incoming data:", data);
 
-    if (!SUPABASE_KEY) {
-      return json(500, {
-        ok: false,
-        error: "Missing Supabase key. Add SUPABASE_ANON_KEY in Netlify Environment variables."
-      });
+    const SUPABASE_URL = process.env.SUPABASE_URL;
+    const SUPABASE_KEY = process.env.SUPABASE_KEY;
+
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      console.error("❌ Missing environment variables");
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: "Missing environment variables" }),
+      };
     }
 
-    const input = JSON.parse(event.body || "{}");
-    const allowedSources = ["client_contact", "client_quote", "partner_application"];
+    // Detectar tipo de formulario
+    const isPartner = data.form_source === "partner";
 
-    const sourceType = allowedSources.includes(input.source_type) ? input.source_type : "client_contact";
+    const table = isPartner ? "partners" : "leads";
 
-    const record = {
-      form_name: input.form_name || "unknown",
-      source_type: sourceType,
-      lead_type: input.lead_type || null,
-      status: input.status || (sourceType === "partner_application" ? "NEW_APPLICATION" : "NEW"),
-      name: input.name || null,
-      email: input.email || null,
-      phone: input.phone || null,
-      service: input.service || null,
-      message: input.message || null,
-      page_path: input.page_path || null,
-      language: input.language || null,
-      user_agent: event.headers["user-agent"] || null,
-      payload: input.payload || input
-    };
+    console.log("📌 Inserting into table:", table);
 
-    if (!record.name && !record.email && !record.phone) {
-      return json(400, { ok: false, error: "Missing contact information." });
-    }
-
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/website_submissions`, {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "apikey": SUPABASE_KEY,
-        "Authorization": `Bearer ${SUPABASE_KEY}`,
-        "Prefer": "return=representation"
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        Prefer: "return=minimal",
       },
-      body: JSON.stringify(record)
+      body: JSON.stringify(isPartner
+        ? {
+            full_name: data.name || null,
+            email: data.email || null,
+            phone: data.phone || null,
+            company_name: data.company || null,
+            provided_services: data.service || null,
+            additional_info: data.message || null,
+            form_source: data.form_source || null,
+            next_action: "review",
+            raw_submission: data,
+          }
+        : {
+            name: data.name || null,
+            email: data.email || null,
+            phone: data.phone || null,
+            company: data.company || null,
+            service: data.service || null,
+            message: data.message || null,
+            form_source: data.form_source || null,
+            lead_type: data.lead_type || "quick",
+            next_action: "contact",
+            quote_details: data.quote_details || null,
+          }),
     });
 
     const text = await response.text();
-    let data = null;
-    try { data = text ? JSON.parse(text) : null; } catch (_) { data = text; }
+
+    console.log("📡 Supabase response status:", response.status);
+    console.log("📡 Supabase response body:", text);
 
     if (!response.ok) {
-      return json(response.status, {
-        ok: false,
-        error: "Supabase insert failed",
-        details: data
-      });
+      return {
+        statusCode: 500,
+        body: JSON.stringify({
+          error: "Supabase error",
+          details: text,
+        }),
+      };
     }
 
-    return json(200, { ok: true, data });
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ success: true }),
+    };
   } catch (error) {
-    return json(500, { ok: false, error: error.message });
+    console.error("🔥 Function crash:", error);
+
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: "Server error",
+        details: error.message,
+      }),
+    };
   }
 };
