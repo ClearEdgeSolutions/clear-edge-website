@@ -1,8 +1,7 @@
 exports.handler = async (event) => {
   try {
-    const data = JSON.parse(event.body);
-
-    const response = await fetch("https://TU_PROJECT_URL.supabase.co/rest/v1/leads", {
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_KEY;
       method: "POST",
       headers: {
         "Content-Type": "application/json",
