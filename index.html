@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>if(/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)&&!sessionStorage.getItem("ces-desktop")){location.replace("mobile.html");}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clear Edge Solutions — Professional Cleaning in Florida</title>
+  <meta name="description" content="Professional residential, commercial, post-construction, floor care, window cleaning, pressure washing, handyman support, and cleaning operations services in Tampa Bay and nearby Florida areas." />
+  <link rel="icon" type="image/png" href="assets/logo-ces.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #020712;
+      --navy-900: #051123;
+      --navy-850: #07172d;
+      --navy-800: #0b1e3b;
+      --navy-700: #0f2b52;
+      --ink: #f5f8ff;
+      --muted: #9eabc2;
+      --muted-2: #c9d3e7;
+      --gold: #f6b51c;
+      --gold-2: #ffd56f;
+      --orange: #ff9f1c;
+      --line: rgba(255,255,255,.1);
+      --line-2: rgba(246,181,28,.22);
+      --glass: rgba(255,255,255,.055);
+      --glass-2: rgba(255,255,255,.032);
+      --max: 1220px;
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --shadow: 0 28px 80px rgba(0,0,0,.36);
+      --nav-h: 78px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(246,181,28,.12), transparent 28rem),
+        radial-gradient(circle at 82% 16%, rgba(0,88,180,.18), transparent 34rem),
+        linear-gradient(180deg, var(--navy-950) 0%, #061020 42%, #030811 100%);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent 72%);
+      z-index: -1;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    section { scroll-margin-top: calc(var(--nav-h) + 20px); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      width: fit-content;
+      color: var(--gold-2);
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: .76rem;
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--gold); box-shadow: 0 0 18px rgba(246,181,28,.75); }
+    .section-title {
+      font-family: Syne, Inter, sans-serif;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      margin: 14px 0 16px;
+    }
+    .section-sub {
+      color: var(--muted-2);
+      font-size: clamp(1rem, 1.4vw, 1.08rem);
+      line-height: 1.72;
+      max-width: 720px;
+      margin: 0;
+    }
+    .gold { color: var(--gold-2); }
+    .soft { color: var(--muted); }
+    .surface {
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(12,28,57,.82), rgba(3,9,20,.82));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 0 25px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      white-space: nowrap;
+      font-size: .96rem;
+    }
+    .btn-primary {
+      color: #08111f;
+      background: linear-gradient(135deg, #ffe08a, var(--gold) 48%, #f59b14);
+      box-shadow: 0 14px 36px rgba(246,181,28,.26);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 46px rgba(246,181,28,.36); }
+    .btn-secondary { color: var(--ink); border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.045); }
+    .btn-secondary:hover { transform: translateY(-2px); border-color: rgba(246,181,28,.34); background: rgba(246,181,28,.085); }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--nav-h);
+      z-index: 50;
+      background: rgba(2,7,18,.76);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(22px);
+    }
+    .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: fit-content; }
+    .brand-logo { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 8px 20px rgba(246,181,28,.12)); }
+    .brand-wordmark { display: grid; line-height: 1; }
+    .brand-wordmark strong { font-family: Syne, Inter, sans-serif; font-size: 1rem; letter-spacing: .09em; text-transform: uppercase; }
+    .brand-wordmark span { color: var(--muted); font-size: .71rem; letter-spacing: .18em; text-transform: uppercase; margin-top: 5px; }
+    .nav-links { display: flex; align-items: center; gap: 3px; }
+    .nav-links a {
+      color: #c8d3e8;
+      font-weight: 700;
+      font-size: .9rem;
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: .18s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-2); background: rgba(246,181,28,.09); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .menu-btn { display: none; width: 46px; height: 46px; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: white; cursor: pointer; }
+    .menu-btn span { display: block; width: 19px; height: 2px; margin: 4px auto; background: currentColor; border-radius: 99px; }
+    .mobile-menu { display: none; }
+
+    /* Hero */
+    .hero { min-height: 100vh; padding: calc(var(--nav-h) + 48px) 0 86px; position: relative; overflow: hidden; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -16rem;
+      top: 11rem;
+      width: 44rem;
+      height: 44rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246,181,28,.13), transparent 68%);
+      z-index: -1;
+    }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(380px, .97fr); gap: 42px; align-items: center; }
+    .hero-copy { padding-top: 34px; }
+    .hero h1 { font-family: Syne, Inter, sans-serif; font-size: clamp(3rem, 6vw, 5.8rem); line-height: .9; letter-spacing: -.075em; margin: 0 0 24px; }
+    .hero h1 span { background: linear-gradient(90deg, #fff, var(--gold-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-text { color: #c4cee2; line-height: 1.74; font-size: 1.08rem; max-width: 650px; margin: 0 0 30px; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; margin-bottom: 30px; }
+    .hero-trust { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; max-width: 650px; }
+    .trust-item { padding: 16px 15px; border-radius: 18px; background: rgba(255,255,255,.042); border: 1px solid rgba(255,255,255,.075); }
+    .trust-item strong { display: block; color: var(--gold-2); font-family: Syne, Inter, sans-serif; font-size: 1.15rem; margin-bottom: 4px; }
+    .trust-item span { color: var(--muted); font-size: .82rem; line-height: 1.38; }
+    .hero-stage {
+      position: relative;
+      min-height: 640px;
+      border-radius: 42px;
+      overflow: hidden;
+      border: 1px solid rgba(246,181,28,.18);
+      background:
+        radial-gradient(circle at 42% 23%, rgba(246,181,28,.18), transparent 21rem),
+        radial-gradient(circle at 88% 72%, rgba(27,112,220,.18), transparent 20rem),
+        linear-gradient(160deg, rgba(16,39,76,.84), rgba(3,8,18,.96));
+      box-shadow: var(--shadow);
+    }
+    .hero-stage::before { content: ""; position: absolute; inset: 24px; border-radius: 32px; border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.04), transparent); z-index: 1; pointer-events: none; }
+    .hero-stage::after { content:""; position:absolute; width: 520px; height: 520px; left: -160px; bottom: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(246,181,28,.22), transparent 68%); animation: heroGlow 6s ease-in-out infinite alternate; z-index: 0; }
+    .hero-logo-watermark { position: absolute; width: 62%; right: -8%; top: 7%; opacity: .075; filter: grayscale(1); z-index: 0; }
+    .hero-edge { position: absolute; width: min(64%, 380px); left: 0%; bottom: -2%; z-index: 4; filter: drop-shadow(0 28px 46px rgba(0,0,0,.44)); animation: edgeFloat 4.8s ease-in-out infinite; }
+    .hero-photo-card { position: absolute; right: 5%; top: 8%; width: 58%; border-radius: 30px; overflow: hidden; border: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.06); transform: rotate(1.5deg); box-shadow: 0 32px 80px rgba(0,0,0,.38); z-index: 3; }
+    .hero-photo-card::after { content:""; position:absolute; inset:0; background: linear-gradient(135deg, rgba(255,255,255,.18), transparent 30%, rgba(2,7,18,.2)); pointer-events:none; }
+    .hero-photo-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+    .hero-motion-lines { position: absolute; inset: 0; pointer-events: none; z-index: 2; overflow: hidden; }
+    .hero-motion-lines span { position: absolute; height: 3px; border-radius: 999px; background: linear-gradient(90deg, transparent, rgba(255,213,111,.85), transparent); filter: drop-shadow(0 0 12px rgba(246,181,28,.45)); opacity: .65; transform: rotate(-14deg); animation: motionSweep 4s linear infinite; }
+    .hero-motion-lines span:nth-child(1) { width: 260px; top: 39%; left: -28%; animation-delay: 0s; }
+    .hero-motion-lines span:nth-child(2) { width: 180px; top: 55%; left: -35%; animation-delay: 1.35s; opacity: .42; }
+    .hero-motion-lines span:nth-child(3) { width: 220px; top: 72%; left: -30%; animation-delay: 2.65s; opacity: .52; }
+    .hero-sparkles { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
+    .hero-sparkles span { position: absolute; width: 10px; height: 10px; background: var(--gold-2); clip-path: polygon(50% 0, 64% 36%, 100% 50%, 64% 64%, 50% 100%, 36% 64%, 0 50%, 36% 36%); filter: drop-shadow(0 0 12px rgba(246,181,28,.72)); opacity: .9; animation: sparklePulse 2.8s ease-in-out infinite; }
+    .hero-sparkles span:nth-child(1) { right: 13%; top: 34%; }
+    .hero-sparkles span:nth-child(2) { left: 16%; top: 22%; animation-delay: .65s; transform: scale(.75); }
+    .hero-sparkles span:nth-child(3) { right: 28%; bottom: 17%; animation-delay: 1.2s; transform: scale(.6); }
+    .hero-sparkles span:nth-child(4) { left: 46%; bottom: 8%; animation-delay: 1.8s; transform: scale(.8); }
+    @keyframes edgeFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes heroGlow { from { transform: scale(.92); opacity: .72; } to { transform: scale(1.08); opacity: 1; } }
+    @keyframes motionSweep { from { transform: translateX(0) rotate(-14deg); } to { transform: translateX(980px) rotate(-14deg); } }
+    @keyframes sparklePulse { 0%,100% { opacity: .25; transform: scale(.7) rotate(0deg); } 50% { opacity: 1; transform: scale(1.15) rotate(22deg); } }
+
+    /* mascot rail */
+    .edge-rail { padding: 0 0 90px; }
+    .edge-rail-card { border-radius: var(--radius-xl); padding: 26px; display: grid; grid-template-columns: .78fr 1.22fr; gap: 24px; align-items: center; position: relative; overflow: hidden; }
+    .edge-rail-card::before { content:""; position:absolute; inset:auto -10% -80% 30%; height: 22rem; background: radial-gradient(circle, rgba(246,181,28,.18), transparent 70%); }
+    .edge-portrait { min-height: 350px; position: relative; display: grid; place-items: end center; border-radius: 28px; overflow: hidden; background: linear-gradient(160deg, rgba(246,181,28,.12), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.08); }
+    .edge-portrait img { max-height: 360px; margin-bottom: -34px; filter: drop-shadow(0 24px 38px rgba(0,0,0,.36)); }
+    .edge-rail-copy { position: relative; z-index: 1; }
+    .edge-rail-copy h2 { font-family: Syne, Inter, sans-serif; font-size: clamp(2rem, 3.5vw, 3.35rem); line-height: .98; letter-spacing: -.06em; margin: 12px 0 14px; }
+    .edge-features { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 22px; }
+    .edge-feature { padding: 18px; border-radius: 20px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.08); }
+    .edge-feature b { display:block; margin-bottom: 6px; color: #fff; }
+    .edge-feature span { display:block; color: var(--muted); line-height: 1.5; font-size: .9rem; }
+
+    /* Services */
+    .services { padding: 92px 0; background: linear-gradient(180deg, rgba(255,255,255,.025), transparent); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 28px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-btn { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); color: #d3ddf0; font-weight: 800; border-radius: 999px; padding: 11px 15px; cursor: pointer; }
+    .filter-btn.active, .filter-btn:hover { color: #08111f; background: linear-gradient(135deg, #ffe08a, var(--gold)); border-color: rgba(246,181,28,.45); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .service-card {
+      min-height: 430px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(160deg, rgba(13,31,61,.9), rgba(2,7,18,.98));
+      box-shadow: 0 20px 50px rgba(0,0,0,.24);
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+    .service-card:hover { transform: translateY(-7px); border-color: rgba(246,181,28,.3); box-shadow: 0 30px 76px rgba(0,0,0,.35); }
+    .service-art { height: 210px; overflow: hidden; position: relative; background: #09172d; }
+    .service-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(2,7,18,.76)); }
+    .service-art img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .service-card:hover .service-art img { transform: scale(1.055); }
+    .service-body { padding: 22px; position: relative; }
+    .service-kicker { color: var(--gold-2); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .service-body h3 { font-family: Syne, Inter, sans-serif; margin: 9px 0 10px; font-size: 1.28rem; letter-spacing: -.03em; }
+    .service-body p { color: var(--muted-2); line-height: 1.58; margin: 0 0 16px; font-size: .95rem; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .service-tags span { color: #d9e4f8; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.045); border-radius: 999px; padding: 6px 9px; font-size: .75rem; font-weight: 800; }
+    .edge-mini { position: absolute; width: 42px; height: 42px; right: 16px; top: -59px; padding: 7px; object-fit: contain; border-radius: 50%; background: rgba(2,7,18,.82); border: 1px solid rgba(246,181,28,.4); box-shadow: 0 10px 22px rgba(0,0,0,.45); z-index: 3; }
+    .service-card[data-hidden="true"] { display: none; }
+
+    /* Spaces */
+    .spaces { padding: 94px 0; }
+    .spaces-shell { display: grid; grid-template-columns: .95fr 1.05fr; gap: 24px; align-items: stretch; }
+    .spaces-left { border-radius: var(--radius-xl); padding: 34px; position: relative; overflow: hidden; min-height: 430px; }
+    .spaces-left::after { content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background: linear-gradient(90deg, rgba(6,17,34,.98) 0%, rgba(6,17,34,.9) 56%, rgba(6,17,34,.28) 100%); }
+    .spaces-left > :not(.edge-space) { position: relative; z-index: 2; }
+    .spaces-left .edge-space { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: .38; z-index: 0; border-radius: 0; -webkit-mask-image: linear-gradient(90deg, transparent 18%, rgba(0,0,0,.85) 55%); mask-image: linear-gradient(90deg, transparent 18%, rgba(0,0,0,.85) 55%); filter: none; }
+    .spaces-left .section-title, .spaces-left .section-sub { max-width: 68%; }
+    .spaces-left .section-sub { padding-right: 0; }
+    .spaces-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .space-card { border-radius: 24px; padding: 24px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.08); min-height: 180px; }
+    .space-card .icon { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: rgba(246,181,28,.1); border: 1px solid rgba(246,181,28,.18); color: var(--gold-2); font-size: 1.35rem; margin-bottom: 16px; }
+    .space-card h3 { margin: 0 0 8px; font-family: Syne, Inter, sans-serif; letter-spacing: -.025em; }
+    .space-card p { margin: 0; color: var(--muted); line-height: 1.55; font-size: .94rem; }
+
+    /* Process */
+    .process { padding: 94px 0; background: linear-gradient(180deg, rgba(246,181,28,.04), transparent); }
+    .process-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 26px; align-items: start; margin-top: 28px; }
+    .process-cameo { border-radius: var(--radius-xl); min-height: 560px; position: sticky; top: 100px; overflow: hidden; display: block; }
+    .process-cameo::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 50% 18%, rgba(246,181,28,.18), transparent 48%); z-index: 1; pointer-events: none; }
+    .process-cameo::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(2,7,18,.06), rgba(2,7,18,.16)); z-index: 2; pointer-events: none; }
+    .process-cameo img { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: center center; z-index: 0; filter: none; }
+    .process-art { border-radius: var(--radius-xl); min-height: 560px; position: sticky; top: 100px; overflow: hidden; }
+    .process-art::before { content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background: radial-gradient(circle at 50% 14%, rgba(246,181,28,.16), transparent 52%), linear-gradient(180deg, transparent 58%, rgba(2,7,18,.42)); }
+    .process-art img { position:absolute; inset:0; width:100%; height:100%; max-height:none; margin:0; object-fit:cover; object-position:center center; filter:none; z-index:0; }
+    .steps { display: grid; gap: 14px; }
+    .step { display: grid; grid-template-columns: 64px 1fr; gap: 18px; padding: 24px; border-radius: 26px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.08); }
+    .step-num { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; color: #07101e; background: linear-gradient(135deg, #ffe08a, var(--gold)); font-weight: 900; font-family: Syne, Inter, sans-serif; }
+    .step h3 { margin: 0 0 8px; font-family: Syne, Inter, sans-serif; letter-spacing: -.03em; font-size: 1.25rem; }
+    .step p { margin: 0; color: var(--muted-2); line-height: 1.62; }
+
+    /* Why */
+    .why { padding: 94px 0; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; margin-top: 30px; }
+    .why-card { border-radius: 26px; padding: 24px; background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.025)); border: 1px solid rgba(255,255,255,.085); min-height: 240px; position: relative; overflow: hidden; }
+    .why-card::after { content:""; position: absolute; right: -70px; bottom: -70px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(246,181,28,.16), transparent 68%); }
+    .why-icon { width: 48px; height: 48px; display:grid; place-items:center; border-radius: 16px; background: rgba(246,181,28,.1); color: var(--gold-2); border: 1px solid rgba(246,181,28,.18); margin-bottom: 18px; font-size: 1.35rem; }
+    .why-card h3 { margin: 0 0 9px; font-family: Syne, Inter, sans-serif; letter-spacing: -.025em; }
+    .why-card p { margin: 0; color: var(--muted); line-height: 1.58; font-size: .94rem; }
+    .why-banner { margin-top: 16px; border-radius: var(--radius-xl); padding: 26px; display: grid; grid-template-columns: auto 1fr auto; gap: 22px; align-items: center; position: relative; overflow: hidden; }
+    .why-banner img { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 18px 25px rgba(0,0,0,.3)); }
+    .why-banner h3 { font-family: Syne, Inter, sans-serif; font-size: clamp(1.4rem, 3vw, 2.2rem); margin: 0 0 8px; letter-spacing: -.05em; }
+    .why-banner p { margin: 0; color: var(--muted-2); line-height: 1.55; }
+
+    /* Areas */
+    .areas { padding: 94px 0; }
+    .areas-shell { border-radius: var(--radius-xl); overflow: hidden; display: grid; grid-template-columns: 1.05fr .95fr; }
+    .areas-copy { padding: 38px; }
+    .city-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 9px; margin-top: 26px; }
+    .city { border-radius: 15px; padding: 12px 10px; text-align: center; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.075); color: #d8e2f5; font-weight: 800; font-size: .9rem; }
+    .areas-visual { position: relative; min-height: 480px; background: linear-gradient(160deg, rgba(246,181,28,.11), rgba(255,255,255,.02)); overflow: hidden; }
+    .areas-visual::before { content:"CES"; position: absolute; top: 38px; right: 36px; font-family: Syne, Inter, sans-serif; font-size: 6rem; font-weight: 900; color: rgba(255,255,255,.045); letter-spacing: -.08em; z-index: 2; }
+    .areas-visual::after { content:""; position:absolute; inset:0; z-index:1; background: linear-gradient(90deg, rgba(2,7,18,.46), rgba(2,7,18,.08) 42%, rgba(2,7,18,.28)); pointer-events:none; }
+    .areas-visual img { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; object-position: 62% center; margin:0; filter:none; z-index:0; }
+    .coverage-card { position: absolute; left: 28px; bottom: 28px; max-width: 260px; padding: 18px; border-radius: 22px; background: rgba(2,7,18,.62); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(18px); z-index: 3; }
+    .coverage-card b { color: var(--gold-2); }
+    .coverage-card p { color: var(--muted-2); margin: 6px 0 0; line-height: 1.45; font-size: .92rem; }
+
+    /* Quote */
+    .quote { padding: 94px 0; background: radial-gradient(circle at 20% 35%, rgba(246,181,28,.08), transparent 35rem); }
+    .quote-shell { display: grid; grid-template-columns: .82fr 1.18fr; gap: 24px; align-items: start; }
+    .quote-aside { border-radius: var(--radius-xl); padding: 30px; position: sticky; top: 104px; overflow: hidden; }
+    .quote-aside img { width: 250px; margin: 10px auto -34px; filter: drop-shadow(0 22px 35px rgba(0,0,0,.36)); }
+    .promise-list { display: grid; gap: 11px; margin-top: 20px; }
+    .promise { display: flex; gap: 11px; align-items: flex-start; color: #d7e1f4; line-height: 1.5; font-size: .94rem; }
+    .promise::before { content:"✓"; width: 22px; height: 22px; border-radius: 999px; display: grid; place-items: center; flex: 0 0 auto; color: #07101e; background: var(--gold); font-weight: 900; font-size: .78rem; }
+    .form-box { border-radius: var(--radius-xl); padding: 32px; }
+    .form-box h3 { margin: 0 0 8px; font-family: Syne, Inter, sans-serif; font-size: 1.65rem; letter-spacing: -.04em; }
+    .form-box .form-sub { color: var(--muted); margin: 0 0 24px; line-height: 1.6; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    label { color: #aebad1; font-size: .78rem; text-transform: uppercase; letter-spacing: .09em; font-weight: 900; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.045);
+      color: white;
+      border-radius: 15px;
+      padding: 14px 15px;
+      font: inherit;
+      outline: none;
+      transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    textarea { min-height: 124px; resize: vertical; }
+    select option { background: #08172e; color: white; }
+    input::placeholder, textarea::placeholder { color: #65738c; }
+    input:focus, select:focus, textarea:focus { border-color: rgba(246,181,28,.45); box-shadow: 0 0 0 4px rgba(246,181,28,.09); background: rgba(255,255,255,.06); }
+    .form-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; flex-wrap: wrap; }
+    .form-foot small { color: var(--muted); line-height: 1.45; max-width: 410px; }
+
+    /* Contact */
+    .contact { padding: 94px 0 70px; }
+    .contact-shell { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; align-items: stretch; }
+    .contact-card { border-radius: var(--radius-xl); padding: 34px; overflow: hidden; position: relative; }
+    .contact-logo { width: 112px; height: 112px; object-fit: contain; display: block; margin: 8px auto 20px; }
+    .contact-card h2 { font-family: Syne, Inter, sans-serif; font-size: clamp(2rem, 3.6vw, 3rem); line-height: .98; letter-spacing: -.06em; margin: 0 0 16px; }
+    .contact-lines { display: grid; gap: 12px; margin: 25px 0 0; }
+    .contact-line { display: flex; gap: 12px; align-items: center; color: #dbe4f6; font-weight: 700; }
+    .contact-line span { color: var(--gold-2); width: 24px; text-align: center; }
+    .contact-edge { position: relative; min-height: 420px; border-radius: var(--radius-xl); display: grid; place-items: end center; overflow: hidden; background: linear-gradient(160deg, rgba(246,181,28,.1), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.08); }
+    .contact-edge img { width: min(78%, 330px); margin-bottom: -18px; filter: drop-shadow(0 26px 40px rgba(0,0,0,.36)); }
+    .socials { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+    .socials a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; height: 44px; padding: 0 14px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09); color: #d9e4f7; font-weight: 900; }
+    .socials a:hover { color: #07101e; background: var(--gold); }
+
+    footer { padding: 30px 0 44px; border-top: 1px solid rgba(255,255,255,.08); color: var(--muted); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-brand img { width: 44px; height: 44px; object-fit: contain; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { color: #c5d0e4; }
+
+    .float-edge-cta { position: fixed; right: 18px; bottom: 18px; z-index: 40; display: flex; align-items: center; gap: 10px; padding: 10px 14px 10px 10px; border-radius: 999px; background: rgba(2,7,18,.84); border: 1px solid rgba(246,181,28,.28); box-shadow: 0 18px 42px rgba(0,0,0,.3); backdrop-filter: blur(18px); }
+    .float-edge-cta img { width: 44px; height: 44px; object-fit: contain; border-radius: 50%; }
+    .float-edge-cta b { display:block; color: var(--gold-2); font-size: .83rem; }
+    .float-edge-cta span { display:block; color: #d9e4f6; font-size: .78rem; }
+
+    @media (max-width: 1080px) {
+      .nav-links, .nav-actions .btn-primary { display: none; }
+      .menu-btn { display: block; }
+      .mobile-menu { position: fixed; top: calc(var(--nav-h) + 10px); left: 20px; right: 20px; z-index: 60; border-radius: 24px; padding: 12px; background: rgba(3,10,22,.96); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(22px); box-shadow: var(--shadow); }
+      .mobile-menu.open { display: grid; gap: 6px; }
+      .mobile-menu a { padding: 13px 14px; border-radius: 15px; color: #d5dfef; font-weight: 800; }
+      .mobile-menu a:hover { background: rgba(246,181,28,.09); color: var(--gold-2); }
+      .hero-grid, .edge-rail-card, .spaces-shell, .process-grid, .areas-shell, .quote-shell, .contact-shell { grid-template-columns: 1fr; }
+      .hero-stage { min-height: 570px; }
+      .process-cameo, .process-art, .quote-aside { position: relative; top: 0; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .section-head { align-items: start; flex-direction: column; }
+      .spaces-left .section-title, .spaces-left .section-sub { max-width: 100%; }
+      .spaces-left .edge-space { opacity: .12; right: -40px; width: 340px; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 26px, var(--max)); }
+      .brand-wordmark span { display: none; }
+      .brand-wordmark strong { font-size: .86rem; }
+      .brand-logo { width: 44px; height: 44px; }
+      .hero { padding-top: calc(var(--nav-h) + 28px); }
+      .hero h1 { font-size: clamp(2.62rem, 14vw, 4.1rem); }
+      .hero-text { font-size: 1rem; }
+      .hero-trust, .edge-features, .spaces-grid, .services-grid, .why-grid, .city-grid, .form-grid { grid-template-columns: 1fr; }
+      .hero-stage { min-height: 545px; border-radius: 30px; }
+      .hero-photo-card { top: 12%; right: 14px; width: 58%; border-radius: 22px; }
+      .hero-edge { width: 76%; left: -7%; }
+      .hero-motion-lines span { animation-duration: 3.4s; }
+      .edge-portrait { min-height: 300px; }
+      .edge-portrait img { max-height: 330px; }
+      .services, .spaces, .process, .why, .areas, .quote, .contact { padding: 70px 0; }
+      .form-box, .quote-aside, .contact-card, .areas-copy, .spaces-left { padding: 24px; }
+      .why-banner { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+      .form-foot { align-items: stretch; flex-direction: column; }
+      .form-foot .btn { width: 100%; }
+      .float-edge-cta { left: 14px; right: 14px; justify-content: center; }
+    }
+  
+
+    /* Real content migration refinements */
+    .nav-links a[href="#partner"] { display:inline-flex; }
+    .nav-links a[href="#partner"]:hover, .nav-links a[href="#partner"].active { color:var(--muted) !important; background:none !important; }
+    .hero-copy .hero-label { display:inline-flex; align-items:center; gap:8px; color:var(--gold-2); font-weight:900; letter-spacing:.14em; text-transform:uppercase; font-size:.76rem; margin-bottom:18px; }
+    .hero-copy .hero-label::before { content:""; width:8px; height:8px; border-radius:999px; background:var(--gold); box-shadow:0 0 18px rgba(246,181,28,.75); }
+    .hero-trust.real .trust-item strong { font-size:1.38rem; }
+    .service-card { cursor:pointer; }
+    .service-more { margin-top:14px; display:inline-flex; align-items:center; gap:8px; color:var(--gold-2); font-weight:900; font-size:.85rem; letter-spacing:.04em; }
+    .service-card:hover .service-more { text-decoration: underline; }
+    .services-note { margin-top:24px; border-radius:26px; padding:24px; display:grid; grid-template-columns: 1fr auto; gap:20px; align-items:center; }
+    .services-note p { margin: 0; color: var(--muted-2); line-height:1.65; }
+    .spaces-grid { align-content: stretch; }
+    .space-card ul { margin: 14px 0 0; padding: 0; display:flex; flex-wrap:wrap; gap:7px; list-style:none; }
+    .space-card li { border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.045); border-radius:999px; padding:6px 9px; color:#d9e4f8; font-size:.74rem; font-weight:800; }
+    .process .step { align-items:flex-start; }
+    .about { padding: 94px 0; background: linear-gradient(180deg, rgba(255,255,255,.022), transparent); }
+    .about-shell { display:grid; grid-template-columns: .95fr 1.05fr; gap:24px; align-items:stretch; }
+    .about-main { border-radius:var(--radius-xl); padding:34px; position:relative; overflow:hidden; }
+    .about-main::after { content:""; position:absolute; right:-8rem; bottom:-10rem; width:28rem; height:28rem; border-radius:50%; background:radial-gradient(circle, rgba(246,181,28,.16), transparent 70%); }
+    .about-main > * { position:relative; z-index:1; }
+    .about-points { display:grid; gap:12px; margin-top:22px; }
+    .about-point { padding:16px; border-radius:20px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.075); color:#d7e1f5; line-height:1.55; }
+    .mission-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+    .mission-card { border-radius:26px; padding:26px; background:linear-gradient(145deg, rgba(12,28,57,.82), rgba(3,9,20,.82)); border:1px solid rgba(255,255,255,.1); }
+    .mission-card h3 { margin: 0 0 10px; font-family: Syne, Inter, sans-serif; font-size:1.25rem; }
+    .mission-card p { margin:0; color:var(--muted-2); line-height:1.68; }
+    .mission-card strong { color:var(--gold-2); display:block; margin-top:16px; font-family:Syne, Inter, sans-serif; font-size:1.25rem; }
+    .social-strip { padding: 30px 0 80px; }
+    .social-shell { border-radius: var(--radius-xl); padding: 28px; display:grid; grid-template-columns: 1fr auto auto; gap:16px; align-items:center; }
+    .social-shell h2 { margin:0 0 8px; font-family:Syne, Inter, sans-serif; letter-spacing:-.04em; }
+    .social-shell p { margin:0; color:var(--muted-2); line-height:1.6; }
+    .social-pill { border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); padding:14px 16px; border-radius:18px; font-weight:900; color:#d8e2f5; }
+    .partner { display: none; }
+    body.partner-overlay-mode .partner {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: var(--navy-950);
+      overflow-y: auto;
+      padding-top: var(--nav-h);
+      animation: partnerPageIn .3s cubic-bezier(.25,.46,.45,.94) both;
+    }
+    @keyframes partnerPageIn {
+      from { opacity: 0; transform: translateX(100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .partner-shell { display:grid; grid-template-columns:.82fr 1.18fr; gap:24px; align-items:start; }
+    .partner-copy, .partner-form { border-radius:var(--radius-xl); padding:32px; }
+    .partner-copy { position:sticky; top:calc(var(--nav-h) + 20px); }
+    .partner-list { display:grid; gap:12px; margin-top:24px; }
+    .partner-list div { padding:14px 16px; border-radius:18px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); color:#d8e2f5; line-height:1.55; }
+    .check-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:10px; }
+    .check-card { display:flex; gap:10px; align-items:flex-start; padding:12px; border-radius:16px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.035); color:#d8e2f5; font-weight:700; font-size:.9rem; line-height:1.35; }
+    .check-card input { accent-color:var(--gold); margin-top:2px; }
+    .form-section-title { font-family:Syne, Inter, sans-serif; font-weight:800; font-size:1.12rem; margin:26px 0 12px; color:#fff; }
+    .quote-aside .quote-mini { display:grid; gap:12px; margin-top:24px; }
+    .quote-mini div { padding:14px 16px; border-radius:18px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.075); color:#d8e2f5; line-height:1.5; }
+    .field input[type="file"] { padding: 12px; color: var(--muted-2); }
+    .modal-backdrop { position:fixed; inset:0; z-index:120; display:none; place-items:center; padding:22px; background:rgba(2,7,18,.78); backdrop-filter:blur(12px); }
+    .modal-backdrop.open { display:grid; }
+    .service-modal { width:min(940px, 100%); max-height:min(82vh, 920px); overflow:auto; border-radius:32px; padding:0; position:relative; }
+    .modal-hero { min-height:230px; display:grid; grid-template-columns:1fr .85fr; gap:0; background:linear-gradient(135deg, rgba(16,39,76,.96), rgba(3,8,18,.98)); }
+    .modal-hero-copy { padding:34px; }
+    .modal-hero-copy h3 { font-family:Syne, Inter, sans-serif; font-size:clamp(2rem, 3.4vw, 3rem); letter-spacing:-.055em; line-height:1; margin:8px 0 14px; }
+    .modal-hero-copy p { margin:0; color:var(--muted-2); line-height:1.65; }
+    .modal-hero-img { min-height:240px; overflow:hidden; }
+    .modal-hero-img img { width:100%; height:100%; object-fit:cover; }
+    .modal-body { padding:30px 34px 34px; }
+    .modal-close { position:absolute; right:16px; top:16px; z-index:2; width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,.16); background:rgba(2,7,18,.65); color:white; font-size:1.35rem; cursor:pointer; }
+    .modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .modal-box { padding:20px; border-radius:22px; border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.04); }
+    .modal-box h4 { margin:0 0 12px; font-family:Syne, Inter, sans-serif; }
+    .modal-box ul { margin:0; padding-left:18px; color:var(--muted-2); line-height:1.7; }
+    .modal-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+    .service-card[data-hidden="true"] { display: none; }
+    .float-edge-cta { z-index:60; }
+    .lang-btn { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; border:1px solid rgba(246,181,28,.35); background:rgba(246,181,28,.08); color:var(--gold-2); font-weight:900; font-size:.82rem; letter-spacing:.06em; cursor:pointer; transition:.18s ease; flex-shrink:0; }
+    .lang-btn:hover { background:rgba(246,181,28,.18); border-color:rgba(246,181,28,.6); }
+    @media (max-width: 980px) {
+      .about-shell, .partner-shell, .modal-hero { grid-template-columns:1fr; }
+      .partner-copy { position:static; }
+      .social-shell { grid-template-columns:1fr; }
+      .services-note { grid-template-columns:1fr; }
+      .check-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width: 680px) {
+      .modal-body, .modal-hero-copy { padding:24px; }
+      .modal-grid { grid-template-columns:1fr; }
+      .social-strip { padding-bottom:60px; }
+    }
+</style>
+</head>
+
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Clear Edge Solutions home">
+        <img class="brand-logo" src="assets/logo-ces.png" alt="Clear Edge Solutions CES shield logo">
+        <span class="brand-wordmark"><strong>Clear Edge</strong><span>Solutions</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#spaces" data-i18n="nav.spaces">Spaces</a>
+        <a href="#areas" data-i18n="nav.areas">Coverage</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#quote" data-i18n="nav.quote">Quote</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <span style="color:rgba(255,255,255,.18);padding:0 4px;font-size:.8rem;user-select:none;">|</span>
+        <a href="#partner" style="color:var(--muted);font-size:.82rem;opacity:.75;" data-i18n="nav.partner">Providers</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#quote" data-i18n="nav.cta">Request a Free Quote</a>
+        <button class="lang-btn" id="langBtn" aria-label="Cambiar idioma">ES</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" data-i18n="nav.home">Home</a><a href="#services" data-i18n="nav.services">Services</a><a href="#spaces" data-i18n="nav.spaces">Spaces</a><a href="#areas" data-i18n="nav.areas">Coverage</a><a href="#about" data-i18n="nav.about">About Us</a><a href="#quote" data-i18n="nav.cta">Request a Quote</a><a href="#contact" data-i18n="nav.contact">Contact</a><a href="#partner" data-i18n="nav.partner" style="color:var(--muted);font-size:.82rem;opacity:.75;margin-top:4px;border-top:1px solid rgba(255,255,255,.07);padding-top:10px;">Providers</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-label" data-i18n="hero.label">Tampa Bay · Service Operations System</div>
+          <h1 data-i18n="hero.h1">We don’t just clean spaces. <span>We clear your mind.</span></h1>
+          <p class="hero-text" data-i18n="hero.text">Clear Edge Solutions is a service operations system — not just a cleaning company. Curated teams, documented quality control, and real-time visibility so you always know what’s happening, without having to ask.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#quote" data-i18n="hero.cta.primary">Request a Free Quote</a>
+            <a class="btn btn-secondary" href="#process" data-i18n="hero.cta.secondary">How We Work</a>
+          </div>
+          <div class="hero-trust real">
+            <div class="trust-item"><strong>&lt;24h</strong><span data-i18n="trust.1">Quote turnaround for most requests.</span></div>
+            <div class="trust-item"><strong>20+</strong><span data-i18n="trust.2">Cities covered across Tampa Bay.</span></div>
+            <div class="trust-item"><strong>1</strong><span data-i18n="trust.3">Point of contact from start to finish.</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" style="border-radius:42px; overflow:hidden; min-height:640px; border:1px solid rgba(246,181,28,.18); box-shadow:0 28px 80px rgba(0,0,0,.36); align-self:stretch;">
+          <img src="assets/hero-edge-mobile.png" alt="Clear Edge Solutions — Edge mascot" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:640px;" onerror="this.onerror=null;this.src='assets/edge-base.png';this.style.objectFit='contain';this.style.background='var(--navy-950)'">
+        </div>
+      </div>
+    </section>
+
+    <section class="edge-rail" id="edge">
+      <div class="container">
+        <div class="edge-rail-card surface">
+          <div class="edge-portrait"><img src="assets/section-edge.png" alt="Meet Edge — Clear Edge Solutions mascot" style="width:100%;height:100%;object-fit:cover;object-position:center top;max-height:none;margin-bottom:0;filter:none;display:block;"></div>
+          <div class="edge-rail-copy">
+            <div class="eyebrow" data-i18n="eyebrow.edge">Meet Edge</div>
+            <h2 data-i18n="edge.rail.h2">Edge represents the Clear Edge standard.</h2>
+            <p class="section-sub" data-i18n="edge.rail.p">Edge is the face of Clear Edge Solutions — he shows up ready, communicates clearly, and keeps every job focused on the details that matter. Approachable on the surface, serious about the standard underneath.</p>
+            <div class="edge-features">
+              <div class="edge-feature"><b data-i18n="edge.f1.title">Ready to Work</b><span data-i18n="edge.f1.desc">Shown in real cleaning scenarios instead of standing still.</span></div>
+              <div class="edge-feature"><b data-i18n="edge.f2.title">One Clear Standard</b><span data-i18n="edge.f2.desc">The CES shield ties our team, uniforms, and every service together.</span></div>
+              <div class="edge-feature"><b data-i18n="edge.f3.title">Customer Friendly</b><span data-i18n="edge.f3.desc">Professional, approachable, and easier to remember.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="eyebrow.services">What We Do</div>
+            <h2 class="section-title" data-i18n="svc.h2">Everything from routine to specialized.</h2>
+            <p class="section-sub" data-i18n="svc.sub">A complete service menu for homes, offices, turnovers, construction projects, exterior surfaces, floor care, moving support, and operational add-ons — all structured around clear scope, communication, and follow-through.</p>
+          </div>
+          <div class="filters" aria-label="Service filters">
+            <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+            <button class="filter-btn" data-filter="cleaning" data-i18n="filter.cleaning">Cleaning Services</button>
+            <button class="filter-btn" data-filter="special" data-i18n="filter.special">Special Services</button>
+            <button class="filter-btn" data-filter="residential" data-i18n="filter.residential">Residential</button>
+            <button class="filter-btn" data-filter="commercial" data-i18n="filter.commercial">Commercial</button>
+          </div>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+          <article class="service-card" data-category="cleaning residential commercial" data-service="regular-cleaning">
+      <div class="service-art"><img src="assets/svc-regular-cleaning.png" alt="Edge representing Regular Cleaning"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.rc">Maintenance Cleaning</div><h3><span data-i18n="svc.rc.h3">Regular Cleaning</span></h3><p data-i18n="svc.rc.p">Routine cleaning for residential, commercial, and operational spaces that need consistency, reliability, and clean presentation.</p><div class="service-tags"><span data-i18n="tag.recurring">Recurring</span><span data-i18n="tag.homes">Homes</span><span data-i18n="tag.offices">Offices</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="cleaning residential commercial" data-service="deep-cleaning">
+      <div class="service-art"><img src="assets/svc-deep-cleaning.png" alt="Edge representing Deep Cleaning"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.dc">Detailed Reset</div><h3><span data-i18n="svc.dc.h3">Deep Cleaning</span></h3><p data-i18n="svc.dc.p">A top-to-bottom reset for spaces that need stronger detailing, more attention, and a higher standard than routine service.</p><div class="service-tags"><span data-i18n="tag.detailed">Detailed</span><span data-i18n="tag.reset">Reset</span><span data-i18n="tag.hightouch">High-touch</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="cleaning commercial specialty" data-service="post-construction-cleaning">
+      <div class="service-art"><img src="assets/svc-post-construction.png" alt="Edge representing Post-Construction Cleaning"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.pc">Project Cleaning</div><h3><span data-i18n="svc.pc.h3">Post-Construction Cleaning</span></h3><p data-i18n="svc.pc.p">Dust, residue, debris, and final presentation support for projects that need to be finished clean and handed off correctly.</p><div class="service-tags"><span data-i18n="tag.dust">Dust</span><span data-i18n="tag.residue">Residue</span><span data-i18n="tag.finalclean">Final clean</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="cleaning residential commercial specialty" data-service="move-in-move-out-cleaning">
+      <div class="service-art"><img src="assets/svc-move-cleaning.png" alt="Edge representing Move-In / Move-Out Cleaning"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.mo">Turnover Ready</div><h3><span data-i18n="svc.mo.h3">Move-In / Move-Out Cleaning</span></h3><p data-i18n="svc.mo.p">Cleaning for a property before move-in, after move-out, or before a final walkthrough.</p><div class="service-tags"><span data-i18n="tag.moveready">Move ready</span><span data-i18n="tag.turnover">Turnover</span><span data-i18n="tag.handoffs">Handoffs</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="cleaning commercial" data-service="commercial-cleaning">
+      <div class="service-art"><img src="assets/svc-commercial-cleaning.png" alt="Edge representing Commercial Cleaning"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.cc">Business Spaces</div><h3><span data-i18n="svc.cc.h3">Commercial Cleaning</span></h3><p data-i18n="svc.cc.p">Professional upkeep for offices, facilities, studios, academies, showrooms, lobbies, and client-facing spaces.</p><div class="service-tags"><span data-i18n="tag.offices">Offices</span><span data-i18n="tag.studios">Studios</span><span data-i18n="tag.retail">Retail</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="cleaning commercial specialty" data-service="event-cleaning">
+      <div class="service-art"><img src="assets/svc-event-cleaning.png" alt="Edge representing Event Cleaning"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.ec">Event Support</div><h3><span data-i18n="svc.ec.h3">Event Cleaning</span></h3><p data-i18n="svc.ec.p">Pre-event, during-event, and post-event cleaning support for venues and high-activity spaces.</p><div class="service-tags"><span data-i18n="tag.preevent">Pre-event</span><span data-i18n="tag.porter">Porter</span><span data-i18n="tag.postevent">Post-event</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="special commercial residential" data-service="pressure-washing">
+      <div class="service-art"><img src="assets/svc-pressure-washing.png" alt="Edge representing Pressure Washing"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.pw">Exterior Care</div><h3><span data-i18n="svc.pw.h3">Pressure Washing</span></h3><p data-i18n="svc.pw.p">Exterior surface cleaning for entries, sidewalks, facades, driveways, patios, and other high-visibility areas.</p><div class="service-tags"><span data-i18n="tag.exterior">Exterior</span><span data-i18n="tag.curbappeal">Curb appeal</span><span data-i18n="tag.surfaces">Surfaces</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="special commercial residential" data-service="window-cleaning">
+      <div class="service-art"><img src="assets/svc-window-cleaning.png" alt="Edge representing Window Cleaning"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.wc">Clear Finish</div><h3><span data-i18n="svc.wc.h3">Window Cleaning</span></h3><p data-i18n="svc.wc.p">Interior and exterior window care for spaces where clarity, polish, and detail make a visible difference.</p><div class="service-tags"><span data-i18n="tag.glass">Glass</span><span data-i18n="tag.interior">Interior</span><span data-i18n="tag.exterior">Exterior</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="special commercial" data-service="floor-waxing-stripping">
+      <div class="service-art"><img src="assets/svc-floor-waxing.png" alt="Edge representing Floor Waxing &amp; Stripping"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.fw">Floor Care</div><h3><span data-i18n="svc.fw.h3">Floor Waxing &amp; Stripping</span></h3><p data-i18n="svc.fw.p">Floor restoration support that removes worn finish and rebuilds a cleaner, more durable, professional-looking surface.</p><div class="service-tags"><span data-i18n="tag.commercial">Commercial</span><span data-i18n="tag.floorcare">Floor care</span><span data-i18n="tag.finish">Finish</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article><article class="service-card" data-category="special commercial" data-service="consulting">
+      <div class="service-art"><img src="assets/svc-consulting.png" alt="Edge representing Consulting"></div>
+      <div class="service-body"><img class="edge-mini" src="assets/logo-ces.png" alt=""><div class="service-kicker" data-i18n="kicker.co">Operations</div><h3><span data-i18n="svc.co.h3">Consulting</span></h3><p data-i18n="svc.co.p">Operational guidance for cleaning scope, workflow design, service planning, and practical systems that improve consistency.</p><div class="service-tags"><span data-i18n="tag.planning">Planning</span><span data-i18n="tag.systems">Systems</span><span data-i18n="tag.workflow">Workflow</span></div><div class="service-more" data-i18n="svc.open">Open details →</div></div>
+    </article>
+        </div>
+        <div class="services-note surface">
+          <p><strong class="gold" data-i18n="svc.note.title">Not sure where to start?</strong><br><span data-i18n="svc.note.desc">Send the location, timing, property type, and what you are trying to solve. We will guide you to the right cleaning path before pricing the job.</span></p>
+          <a class="btn btn-primary" href="#quote" data-i18n="svc.note.btn">Request a Call</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="spaces" id="spaces">
+      <div class="container spaces-shell">
+        <div class="spaces-left surface">
+          <div class="eyebrow" data-i18n="eyebrow.spaces">Where We Work</div>
+          <h2 class="section-title" data-i18n="spaces.h2">Spaces We Support.</h2>
+          <p class="section-sub" data-i18n="spaces.sub">Different spaces operate differently. Some need steady recurring upkeep. Others need stronger resets, turnover support, presentation-level detailing, or flexible service around traffic and timing.</p>
+          <img class="edge-space" src="assets/section-spaces.png" alt="Clear Edge Solutions office lobby">
+        </div>
+        <div class="spaces-grid">
+          <div class="space-card"><div class="icon">💼</div><h3 data-i18n="space.1.h3">Office Spaces &amp; Work Environments</h3><p data-i18n="space.1.p">Structured support for offices, private suites, shared workspaces, reception areas, breakrooms, and restrooms where daily presentation and operational consistency both matter.</p><ul><li data-i18n="space.1.li1">Recurring upkeep</li><li data-i18n="space.1.li2">Shared areas</li><li data-i18n="space.1.li3">Restroom presentation</li><li data-i18n="space.1.li4">Professional appearance</li></ul></div><div class="space-card"><div class="icon">🛍️</div><h3 data-i18n="space.2.h3">Retail &amp; Customer-Facing Locations</h3><p data-i18n="space.2.p">Support for storefronts, showrooms, counters, service-facing environments, and high-visibility spaces that need to feel clean, organized, and ready for foot traffic.</p><ul><li data-i18n="space.2.li1">Storefront appearance</li><li data-i18n="space.2.li2">Glass and entry areas</li><li data-i18n="space.2.li3">Traffic-sensitive service</li><li data-i18n="space.2.li4">Detail touch-ups</li></ul></div><div class="space-card"><div class="icon">🏢</div><h3 data-i18n="space.3.h3">Apartment Communities &amp; Managed Properties</h3><p data-i18n="space.3.p">Support for units, common areas, shared amenities, and turnover-related needs where timing, repeatability, and presentation affect the full property experience.</p><ul><li data-i18n="space.3.li1">Turnovers</li><li data-i18n="space.3.li2">Common areas</li><li data-i18n="space.3.li3">Amenity spaces</li><li data-i18n="space.3.li4">Leasing presentation</li></ul></div><div class="space-card"><div class="icon">🏡</div><h3 data-i18n="space.4.h3">Vacation Rentals &amp; Short-Stay Properties</h3><p data-i18n="space.4.p">Turnover-focused service for guest-ready spaces that need faster resets, stronger consistency, and a presentation standard that holds from one stay to the next.</p><ul><li data-i18n="space.4.li1">Guest readiness</li><li data-i18n="space.4.li2">Turnover pace</li><li data-i18n="space.4.li3">Visual consistency</li><li data-i18n="space.4.li4">Final presentation</li></ul></div><div class="space-card"><div class="icon">🎪</div><h3 data-i18n="space.5.h3">Event Venues &amp; High-Activity Spaces</h3><p data-i18n="space.5.p">Flexible cleaning support before, during, and after events for spaces where appearance can shift quickly and operational timing matters as much as the cleaning itself.</p><ul><li data-i18n="space.5.li1">Pre-event reset</li><li data-i18n="space.5.li2">Porter support</li><li data-i18n="space.5.li3">Restroom upkeep</li><li data-i18n="space.5.li4">Post-event recovery</li></ul></div><div class="space-card"><div class="icon">🏗️</div><h3 data-i18n="space.6.h3">Post-Construction &amp; Final Presentation Projects</h3><p data-i18n="space.6.p">Detailed final-stage cleaning for remodels, build-outs, new builds, and handoff-ready projects where dust, residue, and overall presentation need to be handled correctly.</p><ul><li data-i18n="space.6.li1">Dust and residue</li><li data-i18n="space.6.li2">Final clean prep</li><li data-i18n="space.6.li3">Presentation-ready finish</li><li data-i18n="space.6.li4">Project handoff support</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container process-grid">
+        <div class="process-art surface"><img src="assets/section-process.png" alt="Edge overseeing cleaning operations from a tablet"></div>
+        <div class="process-copy">
+          <div class="eyebrow" data-i18n="eyebrow.process">How It Works</div>
+          <h2 class="section-title" data-i18n="process.h2">Total control — without lifting a finger.</h2>
+          <p class="section-sub" data-i18n="process.sub">From the moment you request service to the moment it is done, you see the process clearly. The job is planned, executed, reviewed, and closed with structure.</p>
+          <div class="steps">
+            <div class="step"><div class="step-num">01</div><div><h3 data-i18n="step.1.h3">You submit a request</h3><p data-i18n="step.1.p">Tell us what you need — scope, space type, timing, location, access, and priorities. We evaluate internally within hours.</p></div></div>
+            <div class="step"><div class="step-num">02</div><div><h3 data-i18n="step.2.h3">We select the right partner</h3><p data-i18n="step.2.p">From our vetted pool of professionals, selected by fit, performance, timing, and service type — not just whoever happens to be available.</p></div></div>
+            <div class="step"><div class="step-num">03</div><div><h3 data-i18n="step.3.h3">You approve a structured quote</h3><p data-i18n="step.3.p">Scope, team, timing, and price are presented clearly so there are no surprises at the end.</p></div></div>
+            <div class="step"><div class="step-num">04</div><div><h3 data-i18n="step.4.h3">Execution with active supervision</h3><p data-i18n="step.4.p">Clear Edge monitors the job as it happens. You know when we are on the way, on site, and done.</p></div></div>
+            <div class="step"><div class="step-num">05</div><div><h3 data-i18n="step.5.h3">Documented close + your sign-off</h3><p data-i18n="step.5.p">Photos, report, completion confirmation, and final review when needed. The job is not treated as done until the result is right.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container" style="margin-bottom:0;padding-bottom:0;">
+        <div style="width:100%;height:300px;border-radius:var(--radius-xl) var(--radius-xl) 0 0;overflow:hidden;position:relative;margin-bottom:0;border:1px solid rgba(255,255,255,.1);border-bottom:none;box-shadow:0 20px 50px rgba(0,0,0,.3);">
+          <img src="assets/section-about.png" alt="About Clear Edge Solutions" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 22%,rgba(2,7,18,1) 95%);"></div>
+        </div>
+      </div>
+      <div class="container about-shell">
+        <div class="about-main surface">
+          <div class="eyebrow" data-i18n="eyebrow.about">About Clear Edge Solutions</div>
+          <h2 class="section-title" data-i18n="about.h2">More than just a cleaning company. We’re the system behind it.</h2>
+          <p class="section-sub" data-i18n="about.sub.main">Most cleaning services depend on who shows up and how they feel that day. Clear Edge Solutions was built to bring structure into an industry that often relies on inconsistency.</p>
+          <div class="about-points">
+            <div class="about-point" data-i18n="about.p1"><strong>Curated Partner Network:</strong> vetted people and providers aligned with quality, communication, and execution standards.</div>
+            <div class="about-point" data-i18n="about.p2"><strong>Active Supervision:</strong> service is managed before problems become client issues.</div>
+            <div class="about-point" data-i18n="about.p3"><strong>Real-Time Tracking:</strong> clear status, documented outcomes, and one point of contact.</div>
+            <div class="about-point" data-i18n="about.p4"><strong>Documented Quality Control:</strong> repeatable systems, not guesswork.</div>
+          </div>
+        </div>
+        <div class="mission-grid">
+          <div class="mission-card"><h3 data-i18n="mission.title">Our Mission</h3><p data-i18n="mission.p">To deliver cleaning services through structured systems and active supervision, ensuring consistent results in every space we service.</p><strong data-i18n="mission.stat">100% supervised jobs</strong></div>
+          <div class="mission-card"><h3 data-i18n="vision.title">Our Vision</h3><p data-i18n="vision.p">To redefine how cleaning services are delivered — shifting from task-based execution to fully managed, controlled operations at any scale.</p><strong data-i18n="vision.stat">20+ cities and growing</strong></div>
+          <div class="mission-card"><h3 data-i18n="approach.title">Our Approach</h3><p data-i18n="approach.p">Each service is organized around communication, defined expectations, and active follow-through from start to finish.</p><strong data-i18n="approach.stat">1 point of contact</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="container">
+        <div class="eyebrow" data-i18n="eyebrow.why">Our Difference</div>
+        <h2 class="section-title" data-i18n="why.h2">What makes our service model different.</h2>
+        <p class="section-sub" data-i18n="why.sub">Built around oversight, systems, and accountability so customers can expect the same level of service on every job.</p>
+        <div class="why-grid">
+          <div class="why-card"><div class="why-icon">⚙️</div><h3 data-i18n="why.1.h3">System Over Intuition</h3><p data-i18n="why.1.p">Every job follows a defined process with clear roles, clear workflows, and consistent outcomes.</p></div>
+          <div class="why-card"><div class="why-icon">👀</div><h3 data-i18n="why.2.h3">Supervision Before the Problem</h3><p data-i18n="why.2.p">Active monitoring means issues get caught and solved before the client has to chase updates.</p></div>
+          <div class="why-card"><div class="why-icon">📍</div><h3 data-i18n="why.3.h3">You Always Know What’s Happening</h3><p data-i18n="why.3.p">No wondering if someone showed up. Real status, documented results, and one point of contact.</p></div>
+          <div class="why-card"><div class="why-icon">🛡️</div><h3 data-i18n="why.4.h3">Professional Identity</h3><p data-i18n="why.4.p">The CES shield and Edge mascot make the brand recognizable across web, social, uniforms, cards, and print.</p></div>
+        </div>
+        <div class="why-banner surface">
+          <img src="assets/logo-ces.png" alt="CES shield logo">
+          <div><h3 data-i18n="why.banner.h3">Structured service, consistent results.</h3><p data-i18n="why.banner.p">Whether you want to review services first or move straight into pricing, Clear Edge keeps the process clear from the first request.</p></div>
+          <a class="btn btn-primary" href="#quote" data-i18n="why.banner.btn">Start with a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="areas" id="areas">
+      <div class="container areas-shell surface">
+        <div class="areas-copy">
+          <div class="eyebrow" data-i18n="eyebrow.areas">Where We Serve</div>
+          <h2 class="section-title" data-i18n="areas.h2">Based in Tampa Bay — serving clients across our Florida coverage area.</h2>
+          <p class="section-sub" data-i18n="areas.sub">If you are within about an hour of downtown Tampa, we are there. We are also open to exploring new locations depending on the scope, timing, and type of project.</p>
+          <div class="city-grid">
+            <div class="city">Tampa</div><div class="city">Brandon</div><div class="city">Clearwater</div><div class="city">St. Petersburg</div><div class="city">St. Pete Beach</div><div class="city">Westchase</div><div class="city">Apollo Beach</div><div class="city">Dunedin</div><div class="city">Land O Lakes</div><div class="city">Lutz</div><div class="city">Seffner</div><div class="city">Tarpon Springs</div><div class="city">Thonotosassa</div><div class="city">Odessa</div><div class="city">Riverview</div><div class="city">Valrico</div><div class="city">Largo</div><div class="city">Spring Hill</div><div class="city">Wesley Chapel</div><div class="city">Plant City</div>
+          </div>
+        </div>
+        <div class="areas-visual">
+          <img src="assets/section-areas.png" alt="Tampa Bay service coverage area" style="object-position:center top;">
+          <div class="coverage-card"><b data-i18n="areas.outside.h">Need service outside Tampa Bay?</b><p data-i18n="areas.outside.p">Send the details. We can review availability for larger or special projects.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-strip" id="social">
+      <div class="container">
+        <div class="social-shell surface" style="overflow:hidden;padding:0;display:block;">
+          <div style="position:relative;height:240px;flex-shrink:0;">
+            <img src="assets/section-social.png" alt="Stay Connected" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(2,7,18,1) 100%);"></div>
+            <div style="position:absolute;bottom:0;left:28px;right:28px;padding-bottom:22px;">
+              <div class="eyebrow" data-i18n="social.eyebrow" style="margin-bottom:6px;">Stay Connected</div>
+              <h2 style="margin:0;font-family:Syne,Inter,sans-serif;letter-spacing:-.04em;font-size:clamp(1.5rem,2.5vw,2.2rem);" data-i18n="social.h2">Follow Edge on Social Media</h2>
+            </div>
+          </div>
+          <div style="padding:22px 28px;display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:center;">
+            <p style="margin:0;color:var(--muted-2);line-height:1.6;" data-i18n="social.p">Get tips, promotions, and behind-the-scenes content from Edge — our mascot keeping every job on point.</p>
+            <a class="social-pill" href="https://www.facebook.com/people/Clear-Edge-Solutions/61590772946697/" target="_blank" rel="noopener">Facebook · Clear Edge Solutions</a>
+            <a class="social-pill" href="https://www.instagram.com/clearedgesolutions.fl" target="_blank" rel="noopener">Instagram · @clearedgesolutions.fl</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partner" id="partner">
+      <div class="partner-page-top container" style="padding: 14px 0 12px; border-bottom: 1px solid rgba(255,255,255,.07); display:flex; align-items:center; justify-content:space-between; margin-bottom:0;">
+        <button id="partnerBackBtn" type="button" style="display:flex;align-items:center;gap:7px;color:var(--muted-2);font-size:.88rem;font-weight:800;background:none;border:1px solid rgba(255,255,255,.11);border-radius:999px;padding:8px 14px 8px 10px;cursor:pointer;font-family:inherit;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back to site
+        </button>
+        <span style="color:var(--muted);font-size:.68rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;">For Service Providers</span>
+      </div>
+      <div class="container partner-shell">
+        <aside class="partner-copy surface">
+          <div class="eyebrow">Partner Application</div>
+          <h2 class="section-title" data-i18n="partner.h2">Work with Clear Edge Solutions.</h2>
+          <p class="section-sub">This form is for independent professionals or service companies interested in joining the Clear Edge provider network. We look for quality, reliability, communication, and accurate service information.</p>
+          <p style="color:var(--muted);font-size:.82rem;margin:10px 0 0;line-height:1.55;">This application is for service providers joining the CES network — not for booking a service.</p>
+          <div class="partner-list">
+            <div>Apply as an individual or company.</div>
+            <div>Select your service areas and active services.</div>
+            <div>Upload recent work photos when available.</div>
+            <div>We review the application before approving partners.</div>
+          </div>
+        </aside>
+        <form class="partner-form surface" id="partnerApplicationForm" name="clear-edge-partner-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/success.html">
+          <input type="hidden" name="form-name" value="clear-edge-partner-application"><input type="hidden" name="bot-field"><input type="hidden" name="form_family" value="partner_application"><input type="hidden" name="next_action" value="partner_review">
+          <h3>Application Form</h3><p class="form-sub">Complete the required contact information and tell us what services you can reliably provide.</p>
+          <div class="form-grid">
+            <div class="field"><label>Full Name *</label><input name="fullName" required placeholder="Your full name"></div>
+            <div class="field"><label>Phone Number *</label><input name="phone" required type="tel" placeholder="(000) 000-0000"></div>
+            <div class="field"><label>Email</label><input name="email" type="email" placeholder="name@email.com"></div>
+            <div class="field"><label>Company Name</label><input name="companyName" placeholder="Optional if applying as individual"></div>
+            <div class="field full"><label>Are you applying as an individual or a company? *</label><select name="applicationType" required><option>Individual</option><option>Company</option></select></div>
+          </div>
+          <div class="form-section-title">Service Areas</div>
+          <div class="check-grid">
+            <label class="check-card"><input type="checkbox" name="coverageAreas" value="Hillsborough County">Hillsborough County · Tampa, Brandon, Riverview</label>
+            <label class="check-card"><input type="checkbox" name="coverageAreas" value="Pinellas County">Pinellas County · St. Petersburg, Clearwater, Largo</label>
+            <label class="check-card"><input type="checkbox" name="coverageAreas" value="Pasco County">Pasco County · Wesley Chapel, Land O’ Lakes</label>
+            <label class="check-card"><input type="checkbox" name="coverageAreas" value="Other">Other coverage area</label>
+          </div>
+          <div class="form-section-title">Services You Provide</div>
+          <div class="check-grid">
+            <label class="check-card"><input type="checkbox" name="partnerServices" value="Regular Cleaning">Regular Cleaning</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Deep Cleaning">Deep Cleaning</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Post-Construction Cleaning">Post-Construction Cleaning</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Move-In / Move-Out Cleaning">Move-In / Move-Out Cleaning</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Commercial Cleaning">Commercial Cleaning</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Event Cleaning">Event Cleaning</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Pressure Washing">Pressure Washing</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Window Cleaning">Window Cleaning</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Floor Waxing &amp; Stripping">Floor Waxing &amp; Stripping</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Move In / Move Out Assistance">Move In / Move Out Assistance</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Handyman Services">Handyman Services</label><label class="check-card"><input type="checkbox" name="partnerServices" value="Consulting">Consulting</label>
+          </div>
+          <div class="form-grid" style="margin-top:18px;">
+            <div class="field"><label>Do you provide your own supplies/equipment? *</label><select name="suppliesEquipment" required><option>Yes</option><option>No</option><option>Depends on the job</option></select></div>
+            <div class="field"><label>Years of experience *</label><input name="yearsExperience" required placeholder="Example: 3 years"></div>
+            <div class="field"><label>Do you have insurance?</label><select name="insurance"><option>Select</option><option>Yes</option><option>No</option><option>In process</option></select></div>
+            <div class="field"><label>Recent work pictures</label><input type="file" name="workPictures" multiple accept="image/*,.pdf"></div>
+            <div class="field full"><label>Experience / Additional services</label><textarea name="experienceNotes" placeholder="Where have you worked, what do you do, and anything else we should know?"></textarea></div>
+          </div>
+          <div class="form-foot"><small>Applications are reviewed before approval. Clear Edge may contact you for additional details.</small><button class="btn btn-primary" type="submit">Submit Application</button></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="quote" id="quote">
+      <div class="container" style="margin-bottom:0;padding-bottom:0;">
+        <div style="width:100%;height:260px;border-radius:var(--radius-xl) var(--radius-xl) 0 0;overflow:hidden;position:relative;margin-bottom:0;border:1px solid rgba(255,255,255,.1);border-bottom:none;box-shadow:0 20px 50px rgba(0,0,0,.3);">
+          <img src="assets/section-quote.png" alt="Request a Free Quote" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 22%,rgba(2,7,18,1) 95%);"></div>
+        </div>
+      </div>
+      <div class="container quote-shell">
+        <aside class="quote-aside surface">
+          <div class="eyebrow" data-i18n="eyebrow.quote">Request a Free Quote</div>
+          <h2 class="section-title" data-i18n="quote.h2">Choose the fastest way to start.</h2>
+          <p class="section-sub" data-i18n="quote.sub.main">Use this form when you already have the address, service type, and basic project information ready. It is designed to give us enough context to follow up with actual next steps.</p>
+          <div class="quote-mini">
+            <div>Ask quick questions before committing.</div>
+            <div>Get direction on the best service path.</div>
+            <div>Send photos, timing, and priorities in one place.</div>
+          </div>
+          <img src="assets/edge-base.png" alt="Edge mascot standing next to quote form">
+        </aside>
+
+        <form class="form-box surface" id="quoteForm" name="clear-edge-client-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/success.html">
+          <input type="hidden" name="form-name" value="clear-edge-client-quote"><p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p><input type="hidden" name="form_family" value="client_quote"><input type="hidden" name="next_action" value="sales_team_follow_up">
+          <h3>Get your quote now</h3>
+          <p class="form-sub" data-i18n="quote.sub.main">Tell us the service, location, timing, and scope so we can review it faster.</p>
+          <div class="form-grid">
+            <div class="field"><label data-i18n="qform.name">Full Name *</label><input name="fullName" required placeholder="Your name"></div>
+            <div class="field"><label data-i18n="qform.phone">Phone *</label><input name="phone" required type="tel" placeholder="(555) 000-0000"></div>
+            <div class="field"><label data-i18n="qform.email">Email *</label><input name="email" required type="email" placeholder="name@email.com"></div>
+            <div class="field"><label data-i18n="qform.address">Service Address & City *</label><input name="serviceAddressCity" required placeholder="Street address, city"></div>
+            <div class="field full"><label data-i18n="qform.service.label">Select your main service *</label><select name="mainService" required><option value="">Select a service</option><option>Regular Cleaning</option><option>Deep Cleaning</option><option>Post-Construction Cleaning</option><option>Move-In / Move-Out Cleaning</option><option>Commercial Cleaning</option><option>Event Cleaning</option><option>Pressure Washing</option><option>Window Cleaning</option><option>Floor Waxing &amp; Stripping</option><option>Move In / Move Out Assistance</option><option>Handyman Services</option><option>Consulting</option><option>Multiple Services</option><option>Other / Not Sure</option></select></div>
+            <div class="field"><label data-i18n="qform.property.label">Property Type *</label><select name="propertyType" required><option value="">Select</option><option>House</option><option>Apartment / Condo</option><option>Office</option><option>Retail / Storefront</option><option>Commercial Facility</option><option>Vacation Rental</option><option>Event Venue</option><option>Construction / Renovation Site</option><option>Other</option></select></div>
+            <div class="field"><label data-i18n="qform.date">Preferred Service Date *</label><input name="preferredDate" required type="date"></div>
+            <div class="field"><label data-i18n="qform.time">Preferred Service Time *</label><input name="preferredTime" required type="time"></div>
+            <div class="field"><label>Frequency</label><select name="frequency"><option>One-time service</option><option>Weekly</option><option>Biweekly</option><option>Monthly</option><option>Quarterly</option><option>Not sure yet</option></select></div>
+            <div class="field"><label>Square Footage Approx.</label><input name="squareFootage" placeholder="Example: 1,500 sq ft"></div>
+            <div class="field"><label>Number of Floors</label><input name="floors" placeholder="Example: 1"></div>
+            <div class="field"><label>Rooms / Office Rooms</label><input name="rooms" placeholder="Example: 3"></div>
+            <div class="field"><label>Bathrooms</label><input name="bathrooms" placeholder="Example: 2"></div>
+            <div class="field"><label>Water and Electricity available?</label><select name="utilities"><option>Select</option><option>Yes</option><option>No</option><option>Not sure</option></select></div>
+            <div class="field"><label>Pets?</label><select name="pets"><option>Select</option><option>No</option><option>Yes - cats</option><option>Yes - dogs</option><option>Yes - other</option></select></div>
+            <div class="field full"><label data-i18n="qform.details">Project Details *</label><textarea name="projectDetails" required placeholder="Describe your space, timeline, access, areas that need attention, visible issues, or anything important."></textarea></div>
+            <div class="field full"><label data-i18n="qform.photos">Upload photos if available</label><input type="file" name="projectPhotos" multiple accept="image/*,.pdf"></div>
+          </div>
+          <div class="form-foot"><small data-i18n="form.consent">By submitting, you agree to be contacted by Clear Edge Solutions about your cleaning request.</small><button class="btn btn-primary" type="submit" data-i18n="btn.send.quote">Send Quote Request</button></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-shell">
+        <div class="contact-card surface">
+          <div class="eyebrow" data-i18n="nav.contact" style="text-align:center;margin-bottom:14px;">Contact</div>
+          <img class="contact-logo" src="assets/logo-ces.png" alt="CES logo">
+          <h2 data-i18n="contact.h2">Professional Cleaning Services in Florida</h2>
+          <p class="section-sub" data-i18n="contact.sub">Have a project in mind or just a question? Leave us your info and we’ll reach out as soon as possible.</p>
+          <div class="contact-lines">
+            <a class="contact-line" href="tel:18133739323"><span>☎</span>813-373-9323</a>
+            <a class="contact-line" href="mailto:administration@clearedgesolutions.org"><span>✉</span>administration@clearedgesolutions.org</a>
+            <div class="contact-line"><span>📍</span>Tampa Bay, Florida</div>
+          </div>
+          <div class="socials">
+            <a href="https://www.instagram.com/clearedgesolutions.fl" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/people/Clear-Edge-Solutions/61590772946697/" target="_blank" rel="noopener">Facebook</a>
+            <a href="#quote">Quote</a>
+          </div>
+        </div>
+        <form class="contact-card surface" name="clear-edge-client-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+          <input type="hidden" name="form-name" value="clear-edge-client-contact"><input type="hidden" name="bot-field"><input type="hidden" name="form_family" value="client_contact">
+          <h3 data-i18n="contact.form.h3">Send Us a Message</h3><p class="form-sub" data-i18n="contact.form.sub">No rush — we’ll get back to you as soon as possible.</p>
+          <div class="form-grid">
+            <div class="field"><label data-i18n="form.name.label">Name</label><input name="name" required placeholder="Your name"></div>
+            <div class="field"><label data-i18n="form.email.label">Email</label><input name="email" type="email" required placeholder="your@email.com"></div>
+            <div class="field"><label data-i18n="form.phone.label">Phone</label><input name="phone" type="tel" placeholder="Your phone"></div>
+            <div class="field"><label data-i18n="form.service.label">Service Interested In</label><select name="serviceInterested"><option>Multiple Services</option><option>Regular Cleaning</option><option>Deep Cleaning</option><option>Post-Construction Cleaning</option><option>Move-In / Move-Out Cleaning</option><option>Commercial Cleaning</option><option>Event Cleaning</option><option>Pressure Washing</option><option>Window Cleaning</option><option>Floor Waxing &amp; Stripping</option><option>Move In / Move Out Assistance</option><option>Handyman Services</option><option>Consulting</option><option>Multiple Services</option></select></div>
+            <div class="field full"><label data-i18n="form.message.label">Message</label><textarea name="message" placeholder="Tell us what you need"></textarea></div>
+          </div>
+          <div class="form-foot"><small>We also coordinate with vetted service partners and specialized providers who align with our standards.</small><button class="btn btn-primary" type="submit" data-i18n="btn.send.message">Send Message</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand"><img src="assets/logo-ces.png" alt=""><span>© <span id="year"></span> Clear Edge Solutions. All rights reserved.</span></div>
+      <div class="footer-links"><a href="#services" data-i18n="nav.services">Services</a><a href="#quote">Quote</a><a href="#contact">Contact</a><a href="#partner" id="footerPartnerLink" style="color:var(--muted);font-size:.82rem;opacity:.75;">Providers</a></div>
+    </div>
+  </footer>
+
+  <a class="float-edge-cta" href="#quote" aria-label="Ask Edge for a quote">
+    <img src="assets/edge-base.png" alt="Edge mascot icon"><span><b data-i18n="float.title">Ask Edge</b><span data-i18n="float.sub">Get a cleaning quote</span></span>
+  </a>
+
+  <div class="modal-backdrop" id="serviceModal" aria-hidden="true">
+    <div class="service-modal surface" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" id="modalClose" aria-label="Close service details">×</button>
+      <div class="modal-hero">
+        <div class="modal-hero-copy"><div class="eyebrow" id="modalKicker">Service Detail</div><h3 id="modalTitle">Service</h3><p id="modalDesc"></p></div>
+        <div class="modal-hero-img"><img id="modalImg" src="assets/edge-base.png" alt="Edge service visual"></div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-box"><h4 id="modalSideTitle">Service focus</h4><p id="modalSideCopy" class="soft" style="line-height:1.7;margin:0;"></p></div>
+          <div class="modal-box"><h4>Common Fit</h4><ul id="modalPoints"></ul></div>
+        </div>
+        <div class="modal-actions"><a class="btn btn-primary" href="#quote" id="modalQuote">Request a Free Quote</a><button class="btn btn-secondary" type="button" id="modalClose2">Back to Services</button></div>
+      </div>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.service-card');
+    filterButtons.forEach(btn => btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category.split(' ').includes(filter);
+        card.dataset.hidden = show ? 'false' : 'true';
+      });
+    }));
+
+    const serviceDetails = {"regular-cleaning": {"img": "svc-regular-cleaning.png", "kicker": "Maintenance Cleaning", "title": "Regular Cleaning", "desc": "Routine cleaning for residential, commercial, and operational spaces that need consistency, reliability, and clean presentation.", "side": "Consistent upkeep, professionally managed", "points": ["Recurring or routine service scheduling", "Residential and commercial environments", "Structured workflow and clear expectations", "Best for ongoing maintenance and presentation", "Flexible around operating hours", "Strong fit for managed repeat service"]}, "deep-cleaning": {"img": "svc-deep-cleaning.png", "kicker": "Detailed Reset", "title": "Deep Cleaning", "desc": "A top-to-bottom reset for spaces that need stronger detailing, more attention, and a higher standard than routine service.", "side": "A stronger reset for your space", "points": ["Detailed attention to neglected areas", "Ideal before recurring service begins", "Great for seasonal resets and turnovers", "Helps restore a cleaner baseline", "Focused on buildup, edges, and touch zones", "Designed for a stronger overall reset"]}, "post-construction-cleaning": {"img": "svc-post-construction.png", "kicker": "Project Cleaning", "title": "Post-Construction Cleaning", "desc": "Dust, residue, debris, and final presentation support for projects that need to be finished clean and handed off correctly.", "side": "Project-ready final presentation", "points": ["Dust, debris, and residue removal", "Careful work around newly finished surfaces", "Suitable for remodels and buildouts", "Prepared for handoff or occupancy", "Final presentation before client walkthroughs", "Built for detail after active work is complete"]}, "move-in-move-out-cleaning": {"img": "svc-move-cleaning.png", "kicker": "Turnover Ready", "title": "Move-In / Move-Out Cleaning", "desc": "Cleaning for a property before move-in, after move-out, or before a final walkthrough.", "side": "Ready for the next occupant", "points": ["Prepares spaces for transition", "Focused on vacancy-ready presentation", "Useful for tenants, owners, and managers", "Can be paired with additional support services", "Supports faster turnover windows", "Helps reduce handoff issues at transition"]}, "commercial-cleaning": {"img": "edge-vacuum.png", "kicker": "Business Spaces", "title": "Commercial Cleaning", "desc": "Professional upkeep for offices, facilities, studios, academies, showrooms, lobbies, and client-facing spaces.", "side": "Support for operational spaces", "points": ["Offices and business environments", "Professional communication and scheduling", "Reliable ongoing support", "Managed with active oversight", "Built around presentation and uptime", "Adaptable to recurring or custom scopes"]}, "event-cleaning": {"img": "svc-event-cleaning.png", "kicker": "Event Support", "title": "Event Cleaning", "desc": "Pre-event, during-event, and post-event cleaning support for venues and high-activity spaces.", "side": "Cleaning support around the event schedule", "points": ["Pre-event setup cleaning", "During-event porter support", "Restroom checks and trash handling", "Post-event resets", "Indoor and outdoor coordination", "Useful for high-traffic spaces"]}, "pressure-washing": {"img": "svc-pressure-washing.png", "kicker": "Exterior Care", "title": "Pressure Washing", "desc": "Exterior surface cleaning for entries, sidewalks, facades, driveways, patios, and other high-visibility areas.", "side": "Exterior impact that shows", "points": ["Driveways, patios, and exterior surfaces", "Improves appearance quickly", "Useful before events or listings", "Can complement broader property cleanup", "Targets visible outdoor buildup", "Strong curb-appeal improvement service"]}, "window-cleaning": {"img": "svc-window-cleaning.png", "kicker": "Clear Finish", "title": "Window Cleaning", "desc": "Interior and exterior window care for spaces where clarity, polish, and detail make a visible difference.", "side": "Clearer finish, better presentation", "points": ["Interior and exterior options", "Improves visual presentation", "Suitable for homes and businesses", "Pairs well with deep or move-related cleaning", "Helps spaces feel brighter and cleaner", "Ideal final touch before showings or events"]}, "floor-waxing-stripping": {"img": "svc-floor-waxing.png", "kicker": "Floor Care", "title": "Floor Waxing & Stripping", "desc": "Floor restoration support that removes worn finish and rebuilds a cleaner, more durable, professional-looking surface.", "side": "Restore the look of your floors", "points": ["Remove old finish and buildup", "Restore shine and uniform appearance", "Improves long-term floor presentation", "Best for hard-surface commercial floors", "Supports cleaner facility appearance", "Rebuilds a more durable visual finish"]}, "move-in-out-assistance": {"img": "svc-move-cleaning.png", "kicker": "Moving Support", "title": "Move In / Move Out Assistance", "desc": "Moving support beyond cleaning, including transition tasks, organization, setup help, and practical property readiness.", "side": "More than cleaning support", "points": ["Support around transition and setup", "Can complement cleaning services", "Helps simplify move-related logistics", "Flexible based on property needs", "Useful when timing and coordination matter", "Helps reduce friction during moving days"]}, "handyman-services": {"img": "edge-desk.png", "kicker": "Practical Support", "title": "Handyman Services", "desc": "Light repairs, installations, adjustments, and practical maintenance support to keep properties functional and presentation-ready.", "side": "Small fixes that make a difference", "points": ["Light repairs and simple installations", "Supports property readiness", "Convenient add-on to cleaning scope", "Practical for punch-list style needs", "Helps close out minor outstanding tasks", "Useful before inspections or turnover"]}, "consulting": {"img": "svc-consulting.png", "kicker": "Operations", "title": "Consulting", "desc": "Operational guidance for cleaning scope, workflow design, service planning, and practical systems that improve consistency.", "side": "Practical guidance, cleaner execution", "points": ["Service planning and workflow design", "Scope review and operational guidance", "Useful for scaling or reorganizing", "Focused on practical implementation", "Improves consistency and accountability", "Built around real-world service operations"]}};
+    const modal = document.getElementById('serviceModal');
+    const modalClose = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); };
+    function openService(id) {
+      const data = serviceDetails[id];
+      if (!data) return;
+      document.getElementById('modalKicker').textContent = data.kicker || 'Service Detail';
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalDesc').textContent = data.desc;
+      document.getElementById('modalImg').src = 'assets/' + data.img;
+      document.getElementById('modalImg').alt = 'Edge representing ' + data.title;
+      document.getElementById('modalSideTitle').textContent = data.side || 'Service focus';
+      document.getElementById('modalSideCopy').textContent = 'This service is available across our active Florida coverage areas and can be adapted to different property types depending on scope, access, and scheduling requirements.';
+      document.getElementById('modalPoints').innerHTML = (data.points || []).map(p => '<li>' + p + '</li>').join('');
+      modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+    }
+    cards.forEach(card => card.addEventListener('click', () => openService(card.dataset.service)));
+    document.getElementById('modalClose')?.addEventListener('click', modalClose);
+    document.getElementById('modalClose2')?.addEventListener('click', modalClose);
+    document.getElementById('modalQuote')?.addEventListener('click', modalClose);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) modalClose(); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') modalClose(); });
+
+    // ── i18n ──────────────────────────────────────────────────────────
+    const i18n = {
+      en: {
+        'nav.home':'Home','nav.services':'Services','nav.spaces':'Spaces',
+        'nav.areas':'Coverage','nav.about':'About','nav.partner':'Providers',
+        'nav.quote':'Quote','nav.contact':'Contact','nav.cta':'Request a Free Quote',
+        'hero.label':'Tampa Bay · Service Operations System',
+        'hero.h1':"We don't just clean spaces. <span>We clear your mind.</span>",
+        'hero.text':'Clear Edge Solutions is a service operations system — not just a cleaning company. Curated teams, documented quality control, and real-time visibility so you always know what\'s happening, without having to ask.',
+        'eyebrow.edge':'Meet Edge','eyebrow.services':'What We Do',
+        'eyebrow.spaces':'Where We Work','eyebrow.process':'How It Works',
+        'eyebrow.why':'Our Difference','eyebrow.areas':'Where We Serve',
+        'eyebrow.about':'About Clear Edge Solutions',
+        'eyebrow.quote':'Request a Free Quote',
+        'edge.h2':'Your operations partner.',
+        'edge.p':'Edge is the face of Clear Edge Solutions — the system that coordinates teams, monitors jobs, and keeps every service on track from start to finish.',
+        'social.eyebrow':'Stay Connected','social.h2':'Follow Edge on Social Media',
+        'social.p':'Get tips, promotions, and behind-the-scenes content from Edge.',
+        'why.1.p':'Every job follows a defined process with consistent outcomes.',
+        'why.2.p':'Issues get caught and solved before you ever see them.',
+        'why.3.p':'Real status, documented results, one point of contact.',
+        'why.3.h3':'You Always Know What\'s Happening',
+        'why.4.p':'The CES shield makes the brand recognizable everywhere.',
+        'why.banner.h3':'Structured service, consistent results.',
+        'why.banner.p':'Whether you want to review services first or move straight into pricing, Clear Edge keeps the process clear.',
+        'step.1.p':'Tell us what you need — scope, space type, timing. We evaluate internally within hours.',
+        'step.2.p':'From our vetted pool, selected by fit, performance, and timing — not just whoever is available.',
+        'step.3.p':'Scope, team, timing, and price — clearly presented, no surprises at the end.',
+        'step.4.p':'Clear Edge monitors the job as it happens. You know when we\'re on the way, on site, and done.',
+        'step.5.p':'Photos, report, completion confirmation. The job isn\'t done until the result is right.',
+        'about.sub.main':'Most cleaning services depend on who shows up and how they feel that day. Clear Edge Solutions was built to bring structure into an industry that often relies on inconsistency.',
+        'mission.title':'Our Mission','mission.p':'To deliver cleaning services through structured systems and active supervision, ensuring consistent results in every space we service.','mission.stat':'100% supervised jobs',
+        'vision.title':'Our Vision','vision.p':'To redefine how cleaning services are delivered — shifting from task-based execution to fully managed, controlled operations at any scale.','vision.stat':'20+ cities and growing',
+        'approach.title':'Our Approach','approach.p':'Each service is organized around communication, defined expectations, and active follow-through from start to finish.','approach.stat':'1 point of contact',
+        'areas.outside.h':'Need service outside Tampa Bay?','areas.outside.p':'Send the details. We can review availability for larger or special projects.',
+        'contact.h2':'Professional Cleaning Services in Florida',
+        'contact.sub':'Have a project in mind or just a question? Leave us your info and we\'ll reach out.',
+        'contact.form.h3':'Send Us a Message','contact.form.sub':'No rush — we\'ll get back to you as soon as possible.',
+        'form.name.label':'Name','form.email.label':'Email','form.phone.label':'Phone',
+        'form.service.label':'Service Interested In','form.message.label':'Message',
+        'btn.send.message':'Send Message',
+        'quote.sub.main':'Tell us the service, location, timing, and scope so we can review it faster.',
+        'qform.name':'Full Name *','qform.phone':'Phone *','qform.email':'Email *',
+        'qform.address':'Service Address & City *','qform.service.label':'Select your main service *',
+        'qform.property.label':'Property Type *','qform.date':'Preferred Service Date *',
+        'qform.time':'Preferred Service Time *','qform.details':'Project Details *',
+        'qform.photos':'Upload photos if available','btn.send.quote':'Send Quote Request',
+        'form.consent':'By submitting, you agree to be contacted by Clear Edge Solutions about your cleaning request.',
+        // hero CTAs & trust
+        'hero.cta.primary':'Request a Free Quote','hero.cta.secondary':'How We Work',
+        'trust.1':'Quote turnaround for most requests.','trust.2':'Cities covered across Tampa Bay.','trust.3':'Point of contact from start to finish.',
+        // edge rail
+        'edge.rail.h2':'Edge represents the Clear Edge standard.',
+        'edge.rail.p':'Edge is the face of Clear Edge Solutions — he shows up ready, communicates clearly, and keeps every job focused on the details that matter. Approachable on the surface, serious about the standard underneath.',
+        'edge.f1.title':'Ready to Work','edge.f1.desc':'Shown in real cleaning scenarios instead of standing still.',
+        'edge.f2.title':'One Clear Standard','edge.f2.desc':'The CES shield ties our team, uniforms, and every service together.',
+        'edge.f3.title':'Customer Friendly','edge.f3.desc':'Professional, approachable, and easier to remember.',
+        // services
+        'svc.sub':'A complete service menu for homes, offices, turnovers, construction projects, exterior surfaces, floor care, and operational add-ons — all structured around clear scope, communication, and follow-through.',
+        'filter.all':'All','filter.cleaning':'Cleaning Services','filter.special':'Special Services','filter.residential':'Residential','filter.commercial':'Commercial',
+        'kicker.rc':'Maintenance Cleaning','kicker.dc':'Detailed Reset','kicker.pc':'Project Cleaning','kicker.mo':'Turnover Ready','kicker.cc':'Business Spaces','kicker.ec':'Event Support','kicker.pw':'Exterior Care','kicker.wc':'Clear Finish','kicker.fw':'Floor Care','kicker.co':'Operations',
+        'svc.rc.h3':'Regular Cleaning','svc.dc.h3':'Deep Cleaning','svc.pc.h3':'Post-Construction Cleaning','svc.mo.h3':'Move-In / Move-Out Cleaning','svc.cc.h3':'Commercial Cleaning','svc.ec.h3':'Event Cleaning','svc.pw.h3':'Pressure Washing','svc.wc.h3':'Window Cleaning','svc.fw.h3':'Floor Waxing & Stripping','svc.co.h3':'Consulting',
+        'svc.rc.p':'Routine cleaning for residential, commercial, and operational spaces that need consistency, reliability, and clean presentation.',
+        'svc.dc.p':'A top-to-bottom reset for spaces that need stronger detailing, more attention, and a higher standard than routine service.',
+        'svc.pc.p':'Dust, residue, debris, and final presentation support for projects that need to be finished clean and handed off correctly.',
+        'svc.mo.p':'Cleaning for a property before move-in, after move-out, or before a final walkthrough.',
+        'svc.cc.p':'Professional upkeep for offices, facilities, studios, academies, showrooms, lobbies, and client-facing spaces.',
+        'svc.ec.p':'Pre-event, during-event, and post-event cleaning support for venues and high-activity spaces.',
+        'svc.pw.p':'Exterior surface cleaning for entries, sidewalks, facades, driveways, patios, and other high-visibility areas.',
+        'svc.wc.p':'Interior and exterior window care for spaces where clarity, polish, and detail make a visible difference.',
+        'svc.fw.p':'Floor restoration support that removes worn finish and rebuilds a cleaner, more durable, professional-looking surface.',
+        'svc.co.p':'Operational guidance for cleaning scope, workflow design, service planning, and practical systems that improve consistency.',
+        'tag.recurring':'Recurring','tag.homes':'Homes','tag.offices':'Offices','tag.detailed':'Detailed','tag.reset':'Reset','tag.hightouch':'High-touch','tag.dust':'Dust','tag.residue':'Residue','tag.finalclean':'Final clean','tag.moveready':'Move ready','tag.turnover':'Turnover','tag.handoffs':'Handoffs','tag.studios':'Studios','tag.retail':'Retail','tag.preevent':'Pre-event','tag.porter':'Porter','tag.postevent':'Post-event','tag.exterior':'Exterior','tag.curbappeal':'Curb appeal','tag.surfaces':'Surfaces','tag.glass':'Glass','tag.interior':'Interior','tag.commercial':'Commercial','tag.floorcare':'Floor care','tag.finish':'Finish','tag.planning':'Planning','tag.systems':'Systems','tag.workflow':'Workflow',
+        'svc.open':'Open details →','svc.note.title':'Not sure where to start?','svc.note.desc':'Send the location, timing, property type, and what you are trying to solve. We will guide you to the right cleaning path before pricing the job.','svc.note.btn':'Request a Call',
+        // spaces
+        'spaces.sub':'Different spaces operate differently. Some need steady recurring upkeep. Others need stronger resets, turnover support, presentation-level detailing, or flexible service around traffic and timing.',
+        'space.1.h3':'Office Spaces & Work Environments','space.1.p':'Structured support for offices, private suites, shared workspaces, reception areas, breakrooms, and restrooms where daily presentation and operational consistency both matter.','space.1.li1':'Recurring upkeep','space.1.li2':'Shared areas','space.1.li3':'Restroom presentation','space.1.li4':'Professional appearance',
+        'space.2.h3':'Retail & Customer-Facing Locations','space.2.p':'Support for storefronts, showrooms, counters, and high-visibility spaces that need to feel clean, organized, and ready for foot traffic.','space.2.li1':'Storefront appearance','space.2.li2':'Glass and entry areas','space.2.li3':'Traffic-sensitive service','space.2.li4':'Detail touch-ups',
+        'space.3.h3':'Apartment Communities & Managed Properties','space.3.p':'Support for units, common areas, shared amenities, and turnover-related needs where timing, repeatability, and presentation affect the full property experience.','space.3.li1':'Turnovers','space.3.li2':'Common areas','space.3.li3':'Amenity spaces','space.3.li4':'Leasing presentation',
+        'space.4.h3':'Vacation Rentals & Short-Stay Properties','space.4.p':'Turnover-focused service for guest-ready spaces that need faster resets, stronger consistency, and a presentation standard that holds from one stay to the next.','space.4.li1':'Guest readiness','space.4.li2':'Turnover pace','space.4.li3':'Visual consistency','space.4.li4':'Final presentation',
+        'space.5.h3':'Event Venues & High-Activity Spaces','space.5.p':'Flexible cleaning support before, during, and after events for spaces where appearance can shift quickly and operational timing matters as much as the cleaning itself.','space.5.li1':'Pre-event reset','space.5.li2':'Porter support','space.5.li3':'Restroom upkeep','space.5.li4':'Post-event recovery',
+        'space.6.h3':'Post-Construction & Final Presentation Projects','space.6.p':'Detailed final-stage cleaning for remodels, build-outs, new builds, and handoff-ready projects where dust, residue, and overall presentation need to be handled correctly.','space.6.li1':'Dust and residue','space.6.li2':'Final clean prep','space.6.li3':'Presentation-ready finish','space.6.li4':'Project handoff support',
+        // process
+        'process.h2':'Total control — without lifting a finger.','process.sub':'From the moment you request service to the moment it is done, you see the process clearly. The job is planned, executed, reviewed, and closed with structure.',
+        'step.1.h3':'You submit a request','step.2.h3':'We select the right partner','step.3.h3':'You approve a structured quote','step.4.h3':'Execution with active supervision','step.5.h3':'Documented close + your sign-off',
+        // why
+        'eyebrow.why':'Our Difference','why.h2':'What makes our service model different.','why.1.h3':'System Over Intuition','why.2.h3':'Supervision Before the Problem','why.4.h3':'Professional Identity','why.banner.btn':'Start with a Quote',
+        // areas & about
+        'eyebrow.areas':'Where We Serve','areas.h2':'Based in Tampa Bay.','areas.sub':"If you are within about an hour of downtown Tampa, we are there. We are also open to exploring new locations depending on the scope, timing, and type of project.",'why.sub':'Built around oversight, systems, and accountability so customers can expect the same level of service on every job.',
+        'about.h2':"More than just a cleaning company. We're the system behind it.",
+        'about.p1':'<strong>Curated Partner Network:</strong> vetted people and providers aligned with quality, communication, and execution standards.',
+        'about.p2':'<strong>Active Supervision:</strong> service is managed before problems become client issues.',
+        'about.p3':'<strong>Real-Time Tracking:</strong> clear status, documented outcomes, and one point of contact.',
+        'about.p4':'<strong>Documented Quality Control:</strong> repeatable systems, not guesswork.',
+        // quote & float
+        'quote.h2':'Choose the fastest way to start.',
+        'float.title':'Ask Edge','float.sub':'Get a cleaning quote',
+      },
+      es: {
+        'nav.home':'Inicio','nav.services':'Servicios','nav.spaces':'Espacios',
+        'nav.areas':'Cobertura','nav.about':'Nosotros','nav.partner':'Proveedores',
+        'nav.quote':'Cotizar','nav.contact':'Contacto','nav.cta':'Solicitar Cotización',
+        'hero.label':'Tampa Bay · Sistema de Operaciones de Servicio',
+        'hero.h1':'No solo limpiamos espacios. <span>Liberamos tu mente.</span>',
+        'hero.text':'Clear Edge Solutions es un sistema de operaciones de servicio, no solo una empresa de limpieza. Equipos seleccionados, control de calidad documentado y visibilidad en tiempo real para que siempre sepas lo que está pasando.',
+        'eyebrow.edge':'Conoce a Edge','eyebrow.services':'Lo Que Hacemos',
+        'eyebrow.spaces':'Dónde Trabajamos','eyebrow.process':'Cómo Funciona',
+        'eyebrow.why':'Nuestra Diferencia','eyebrow.areas':'Dónde Servimos',
+        'eyebrow.about':'Sobre Clear Edge Solutions',
+        'eyebrow.quote':'Solicitar Cotización Gratis',
+        'edge.h2':'Tu socio de operaciones.',
+        'edge.p':'Edge es la cara de Clear Edge Solutions — el sistema que coordina equipos, supervisa trabajos y mantiene cada servicio en orden de principio a fin.',
+        'social.eyebrow':'Conéctate','social.h2':'Síguenos en Redes Sociales',
+        'social.p':'Consejos, promociones y contenido detrás de cámaras de Edge.',
+        'why.1.p':'Cada trabajo sigue un proceso definido con resultados consistentes.',
+        'why.2.p':'Los problemas se detectan y resuelven antes de que los veas.',
+        'why.3.p':'Estado real, resultados documentados, un punto de contacto.',
+        'why.3.h3':'Siempre Sabes Lo Que Está Pasando',
+        'why.4.p':'El escudo de CES hace que la marca sea reconocible en todas partes.',
+        'why.banner.h3':'Servicio estructurado, resultados consistentes.',
+        'why.banner.p':'Ya sea que quieras revisar los servicios primero o ir directo a precios, Clear Edge mantiene el proceso claro.',
+        'step.1.p':'Dinos qué necesitas — alcance, tipo de espacio, tiempo. Lo evaluamos internamente en horas.',
+        'step.2.p':'De nuestra red verificada, seleccionados por ajuste, rendimiento y tiempo — no solo quien esté disponible.',
+        'step.3.p':'Alcance, equipo, tiempo y precio — presentados claramente, sin sorpresas al final.',
+        'step.4.p':'Clear Edge supervisa el trabajo mientras ocurre. Sabes cuándo vamos en camino, en el sitio y cuando terminamos.',
+        'step.5.p':'Fotos, reporte, confirmación de finalización. El trabajo no está listo hasta que el resultado sea correcto.',
+        'about.sub.main':'La mayoría de los servicios de limpieza dependen de quién aparece y cómo se siente ese día. Clear Edge Solutions fue creado para traer estructura a una industria que a menudo depende de la inconsistencia.',
+        'mission.title':'Nuestra Misión','mission.p':'Entregar servicios de limpieza a través de sistemas estructurados y supervisión activa, asegurando resultados consistentes en cada espacio que atendemos.','mission.stat':'100% trabajos supervisados',
+        'vision.title':'Nuestra Visión','vision.p':'Redefinir cómo se entregan los servicios de limpieza — pasando de la ejecución basada en tareas a operaciones totalmente gestionadas y controladas a cualquier escala.','vision.stat':'Más de 20 ciudades y creciendo',
+        'approach.title':'Nuestro Enfoque','approach.p':'Cada servicio se organiza en torno a la comunicación, expectativas definidas y seguimiento activo de principio a fin.','approach.stat':'1 punto de contacto',
+        'areas.outside.h':'¿Necesitas servicio fuera de Tampa Bay?','areas.outside.p':'Envía los detalles. Podemos revisar disponibilidad para proyectos más grandes o especiales.',
+        'contact.h2':'Servicios de Limpieza Profesional en Florida',
+        'contact.sub':'¿Tienes un proyecto en mente o solo una pregunta? Déjanos tu información y te contactaremos.',
+        'contact.form.h3':'Envíanos un Mensaje','contact.form.sub':'Sin apuro — te respondemos lo antes posible.',
+        'form.name.label':'Nombre','form.email.label':'Correo','form.phone.label':'Teléfono',
+        'form.service.label':'Servicio de Interés','form.message.label':'Mensaje',
+        'btn.send.message':'Enviar Mensaje',
+        'quote.sub.main':'Dinos el servicio, ubicación, tiempo y alcance para revisarlo más rápido.',
+        'qform.name':'Nombre Completo *','qform.phone':'Teléfono *','qform.email':'Correo *',
+        'qform.address':'Dirección y Ciudad del Servicio *','qform.service.label':'Selecciona tu servicio principal *',
+        'qform.property.label':'Tipo de Propiedad *','qform.date':'Fecha Preferida de Servicio *',
+        'qform.time':'Hora Preferida de Servicio *','qform.details':'Detalles del Proyecto *',
+        'qform.photos':'Subir fotos si las tienes','btn.send.quote':'Enviar Solicitud de Cotización',
+        'form.consent':'Al enviar, aceptas ser contactado por Clear Edge Solutions sobre tu solicitud de limpieza.',
+        // hero CTAs & trust
+        'hero.label':'Tampa Bay · Sistema de Operaciones de Servicio',
+        'hero.cta.primary':'Solicitar Cotización Gratuita','hero.cta.secondary':'Cómo Trabajamos',
+        'trust.1':'Respuesta de cotización en menos de 24h.','trust.2':'Ciudades cubiertas en Tampa Bay.','trust.3':'Un solo punto de contacto, de principio a fin.',
+        // edge rail
+        'edge.rail.h2':'Edge representa el estándar de Clear Edge.',
+        'edge.rail.p':'Edge es la cara de Clear Edge Solutions — llega listo, comunica con claridad y mantiene cada trabajo enfocado en los detalles que importan. Accesible por fuera, serio con el estándar por dentro.',
+        'edge.f1.title':'Listo para Trabajar','edge.f1.desc':'Representado en escenarios reales de limpieza, no solo posando.',
+        'edge.f2.title':'Un Estándar Claro','edge.f2.desc':'El escudo de CES une a nuestro equipo, uniformes y cada servicio.',
+        'edge.f3.title':'Amigable con el Cliente','edge.f3.desc':'Profesional, accesible y fácil de recordar.',
+        // services
+        'svc.sub':'Un menú completo de servicios para hogares, oficinas, entregas, proyectos de construcción, superficies exteriores, cuidado de pisos y complementos operativos — todo estructurado alrededor de alcance claro, comunicación y seguimiento.',
+        'filter.all':'Todo','filter.cleaning':'Servicios de Limpieza','filter.special':'Servicios Especiales','filter.residential':'Residencial','filter.commercial':'Comercial',
+        'kicker.rc':'Limpieza de Mantenimiento','kicker.dc':'Reset Detallado','kicker.pc':'Limpieza de Proyecto','kicker.mo':'Lista para Entrega','kicker.cc':'Espacios Comerciales','kicker.ec':'Apoyo en Eventos','kicker.pw':'Cuidado Exterior','kicker.wc':'Acabado Impecable','kicker.fw':'Cuidado de Pisos','kicker.co':'Operaciones',
+        'svc.rc.h3':'Limpieza Regular','svc.dc.h3':'Limpieza Profunda','svc.pc.h3':'Limpieza Post-Construcción','svc.mo.h3':'Limpieza de Mudanza','svc.cc.h3':'Limpieza Comercial','svc.ec.h3':'Limpieza de Eventos','svc.pw.h3':'Lavado a Presión','svc.wc.h3':'Limpieza de Ventanas','svc.fw.h3':'Encerado y Decapado de Pisos','svc.co.h3':'Consultoría',
+        'svc.rc.p':'Limpieza rutinaria para espacios residenciales, comerciales y operativos que necesitan consistencia, confiabilidad y presentación limpia.',
+        'svc.dc.p':'Un reset de arriba abajo para espacios que necesitan mayor detalle, más atención y un estándar más alto que el servicio rutinario.',
+        'svc.pc.p':'Apoyo con polvo, residuos, escombros y presentación final para proyectos que necesitan terminarse limpios y entregarse correctamente.',
+        'svc.mo.p':'Limpieza de una propiedad antes de la mudanza, después de la salida o antes de una inspección final.',
+        'svc.cc.p':'Mantenimiento profesional para oficinas, instalaciones, estudios, academias, salas de exhibición, lobbies y espacios de atención al cliente.',
+        'svc.ec.p':'Apoyo de limpieza antes, durante y después de eventos para venues y espacios de alta actividad.',
+        'svc.pw.p':'Limpieza de superficies exteriores para entradas, aceras, fachadas, entradas de autos, patios y áreas de alta visibilidad.',
+        'svc.wc.p':'Cuidado de ventanas interiores y exteriores para espacios donde la claridad, el brillo y el detalle hacen una diferencia visible.',
+        'svc.fw.p':'Restauración de pisos que elimina el acabado desgastado y reconstruye una superficie más limpia, duradera y profesional.',
+        'svc.co.p':'Orientación operativa para alcance de limpieza, diseño de flujo de trabajo, planificación de servicios y sistemas prácticos que mejoran la consistencia.',
+        'tag.recurring':'Recurrente','tag.homes':'Hogares','tag.offices':'Oficinas','tag.detailed':'Detallado','tag.reset':'Reset','tag.hightouch':'Alta atención','tag.dust':'Polvo','tag.residue':'Residuos','tag.finalclean':'Limpieza final','tag.moveready':'Lista para mudanza','tag.turnover':'Entrega','tag.handoffs':'Traspasos','tag.studios':'Estudios','tag.retail':'Comercio','tag.preevent':'Pre-evento','tag.porter':'Porter','tag.postevent':'Post-evento','tag.exterior':'Exterior','tag.curbappeal':'Presencia exterior','tag.surfaces':'Superficies','tag.glass':'Vidrios','tag.interior':'Interior','tag.commercial':'Comercial','tag.floorcare':'Cuidado de pisos','tag.finish':'Acabado','tag.planning':'Planificación','tag.systems':'Sistemas','tag.workflow':'Flujo de trabajo',
+        'svc.open':'Ver detalles →','svc.note.title':'¿No sabes por dónde empezar?','svc.note.desc':'Envía la ubicación, el tiempo, el tipo de propiedad y lo que quieres resolver. Te orientamos al mejor servicio antes de cotizar.','svc.note.btn':'Solicitar una Llamada',
+        // spaces
+        'spaces.sub':'Cada espacio opera diferente. Algunos necesitan mantenimiento recurrente. Otros requieren resets más intensos, apoyo de entrega, detallado de presentación o servicio flexible según el tráfico y los horarios.',
+        'space.1.h3':'Oficinas y Entornos de Trabajo','space.1.p':'Apoyo estructurado para oficinas, suites privadas, espacios de trabajo compartidos, recepciones, comedores y baños donde la presentación diaria y la consistencia operativa son importantes.','space.1.li1':'Mantenimiento recurrente','space.1.li2':'Áreas compartidas','space.1.li3':'Presentación de baños','space.1.li4':'Apariencia profesional',
+        'space.2.h3':'Locales Comerciales y de Atención al Cliente','space.2.p':'Apoyo para tiendas, salas de exhibición, mostradores y espacios de alta visibilidad que necesitan verse limpios, organizados y listos para el público.','space.2.li1':'Apariencia de la tienda','space.2.li2':'Vidrios y entradas','space.2.li3':'Servicio sensible al tráfico','space.2.li4':'Retoques de detalle',
+        'space.3.h3':'Comunidades y Propiedades Administradas','space.3.p':'Apoyo para unidades, áreas comunes, amenidades compartidas y necesidades de entrega donde el tiempo, la repetibilidad y la presentación afectan la experiencia general.','space.3.li1':'Entregas','space.3.li2':'Áreas comunes','space.3.li3':'Espacios de amenidades','space.3.li4':'Presentación de arrendamiento',
+        'space.4.h3':'Alquileres Vacacionales y Estancias Cortas','space.4.p':'Servicio enfocado en entrega para espacios listos para huéspedes que necesitan resets más rápidos y un estándar de presentación que se mantiene de una estadía a la siguiente.','space.4.li1':'Disponibilidad para huéspedes','space.4.li2':'Ritmo de entrega','space.4.li3':'Consistencia visual','space.4.li4':'Presentación final',
+        'space.5.h3':'Salones de Eventos y Espacios de Alta Actividad','space.5.p':'Apoyo de limpieza flexible antes, durante y después de eventos donde la apariencia puede cambiar rápido y el tiempo importa tanto como la limpieza.','space.5.li1':'Reset pre-evento','space.5.li2':'Apoyo de porter','space.5.li3':'Mantenimiento de baños','space.5.li4':'Recuperación post-evento',
+        'space.6.h3':'Post-Construcción y Presentación Final','space.6.p':'Limpieza detallada de etapa final para remodelaciones, construcciones y proyectos de entrega donde el polvo, los residuos y la presentación deben manejarse correctamente.','space.6.li1':'Polvo y residuos','space.6.li2':'Preparación de limpieza final','space.6.li3':'Acabado listo para presentar','space.6.li4':'Apoyo en entrega del proyecto',
+        // process
+        'process.h2':'Control total — sin mover un dedo.','process.sub':'Desde el momento en que solicitas el servicio hasta que termina, ves el proceso claramente. El trabajo se planifica, ejecuta, revisa y cierra con estructura.',
+        'step.1.h3':'Envías una solicitud','step.2.h3':'Seleccionamos al socio correcto','step.3.h3':'Apruebas una cotización estructurada','step.4.h3':'Ejecución con supervisión activa','step.5.h3':'Cierre documentado + tu aprobación',
+        // why
+        'eyebrow.why':'Nuestra Diferencia','why.h2':'Qué hace diferente nuestro modelo de servicio.','why.1.h3':'Sistema Sobre Intuición','why.2.h3':'Supervisión Antes del Problema','why.4.h3':'Identidad Profesional','why.banner.btn':'Comenzar con una Cotización',
+        // areas & about
+        'eyebrow.areas':'Dónde Servimos','areas.h2':'Basados en Tampa Bay.','areas.sub':'Si estás a menos de una hora del centro de Tampa, llegamos. También estamos abiertos a nuevas ubicaciones según el alcance, el tiempo y el tipo de proyecto.','why.sub':'Construido sobre supervisión, sistemas y responsabilidad para que los clientes puedan esperar el mismo nivel de servicio en cada trabajo.',
+        'about.h2':'Más que una empresa de limpieza. Somos el sistema detrás.',
+        'about.p1':'<strong>Red de Socios Seleccionados:</strong> personas y proveedores verificados alineados con estándares de calidad, comunicación y ejecución.',
+        'about.p2':'<strong>Supervisión Activa:</strong> el servicio se gestiona antes de que los problemas lleguen al cliente.',
+        'about.p3':'<strong>Seguimiento en Tiempo Real:</strong> estado claro, resultados documentados y un punto de contacto.',
+        'about.p4':'<strong>Control de Calidad Documentado:</strong> sistemas repetibles, no suposiciones.',
+        // quote & float
+        'quote.h2':'Elige la forma más rápida de empezar.',
+        'float.title':'Pregunta a Edge','float.sub':'Obtén cotización',
+      }
+    };
+    let currentLang = localStorage.getItem('ces-lang') || 'en';
+    function applyLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('ces-lang', lang);
+      document.documentElement.lang = lang;
+      const t = i18n[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.querySelectorAll('[data-i18n-btn]').forEach(el => {
+        const k = el.dataset.i18nBtn;
+        if (t[k] !== undefined) el.textContent = t[k];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const k = el.dataset.i18nPlaceholder;
+        if (t[k] !== undefined) el.setAttribute('placeholder', t[k]);
+      });
+      const btn = document.getElementById('langBtn');
+      if (btn) btn.textContent = lang === 'en' ? 'ES' : 'EN';
+    }
+    function toggleLang() { applyLang(currentLang === 'en' ? 'es' : 'en'); }
+    document.getElementById('langBtn')?.addEventListener('click', toggleLang);
+    applyLang(currentLang);
+    // ─────────────────────────────────────────────────────────────────────
+    const navLinks = [...document.querySelectorAll('.nav-links a')];
+    const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const setActive = () => {
+      const y = window.scrollY + 130;
+      let current = sections[0]?.id;
+      sections.forEach(sec => { if (sec.offsetTop <= y) current = sec.id; });
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    };
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+
+    // Partner overlay page
+    const openPartnerPage = () => document.body.classList.add('partner-overlay-mode');
+    const closePartnerPage = () => document.body.classList.remove('partner-overlay-mode');
+    document.querySelector('.nav-links a[href="#partner"]')?.addEventListener('click', e => { e.preventDefault(); openPartnerPage(); });
+    document.getElementById('partnerBackBtn')?.addEventListener('click', closePartnerPage);
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') closePartnerPage(); });
+    // Footer partner link
+    document.querySelector('.footer-links a[href="#partner"]')?.addEventListener('click', e => { e.preventDefault(); openPartnerPage(); });
+    // Mobile menu partner link
+    document.querySelector('.mobile-menu a[href="#partner"]')?.addEventListener('click', e => { e.preventDefault(); mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); openPartnerPage(); });
+  </script>
+</body>
+
+</html>
