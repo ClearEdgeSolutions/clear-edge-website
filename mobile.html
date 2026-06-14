@@ -514,13 +514,15 @@
       background: linear-gradient(145deg, rgba(12,28,57,.96), rgba(3,9,20,.98));
       border: 1px solid rgba(255,255,255,.12); border-bottom: none;
     }
-    .modal-header { padding: 22px 22px 0; position: relative; }
+    .modal-header { padding: 22px 22px 24px; position: relative; overflow: hidden; min-height: 180px; }
+    .modal-header::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2,7,18,.98) 35%, rgba(2,7,18,.72) 62%, rgba(2,7,18,.12) 100%); z-index: 1; pointer-events: none; }
+    .modal-header > * { position: relative; z-index: 2; }
+    .modal-header-bg { position: absolute; top: 0; right: -8%; bottom: 0; width: 82%; height: 100%; object-fit: cover; object-position: center 25%; z-index: 0; display: block; }
     .modal-handle { width: 40px; height: 4px; border-radius: 999px; background: rgba(255,255,255,.2); margin: 0 auto 18px; }
     .modal-header .eyebrow { margin-bottom: 8px; }
-    .modal-header h3 { font-family: Syne, Inter, sans-serif; font-size: 1.7rem; letter-spacing: -.05em; margin: 0 0 10px; }
-    .modal-header p { margin: 0; color: var(--muted-2); line-height: 1.62; font-size: .9rem; }
-    .modal-art { height: 240px; overflow: hidden; margin-top: 16px; background: #09172d; }
-    .modal-art img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+    .modal-header h3 { font-family: Syne, Inter, sans-serif; font-size: 1.7rem; letter-spacing: -.05em; margin: 0 0 10px; max-width: 68%; }
+    .modal-header p { margin: 0; color: var(--muted-2); line-height: 1.62; font-size: .9rem; max-width: 62%; }
+    .modal-art { display: none; }
     .modal-body { padding: 18px 22px 30px; }
     .modal-box { padding: 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.04); margin-bottom: 12px; }
     .modal-box h4 { margin: 0 0 10px; font-family: Syne, Inter, sans-serif; font-size: .95rem; }
@@ -767,6 +769,34 @@
     @keyframes heroGlow { from { transform: scale(.9); opacity: .7; } to { transform: scale(1.1); opacity: 1; } }
     @keyframes motionSweep { from { transform: translateX(0) rotate(-12deg); } to { transform: translateX(800px) rotate(-12deg); } }
     @keyframes sparklePulse { 0%,100% { opacity: .2; transform: scale(.65) rotate(0deg); } 50% { opacity: 1; transform: scale(1.1) rotate(20deg); } }
+
+    /* ── Modal steps ── */
+    .modal-section-lbl { font-size: .68rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-2); margin: 0 0 14px; display: flex; align-items: center; gap: 8px; }
+    .spotlight-pill { font-weight: 500; font-size: .62rem; letter-spacing: .04em; color: var(--muted-2); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 99px; padding: 2px 8px; text-transform: none; }
+    .modal-steps-wrap { padding: 0 22px 8px; }
+    .modal-step { display: flex; gap: 12px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .modal-step:last-child { border-bottom: none; }
+    .step-num { flex: 0 0 26px; height: 26px; border-radius: 50%; background: rgba(246,181,28,.1); border: 1px solid rgba(246,181,28,.25); display: flex; align-items: center; justify-content: center; color: var(--gold-2); font-size: .62rem; font-weight: 900; line-height: 1; }
+    .step-body strong { display: block; font-size: .88rem; margin-bottom: 2px; }
+    .step-body p { color: var(--muted-2); font-size: .8rem; line-height: 1.5; margin: 0; }
+    .modal-step-img { width: 82px; height: 70px; border-radius: 10px; object-fit: cover; flex-shrink: 0; cursor: zoom-in; }
+    /* ── Photo lightbox ── */
+    .img-lightbox { position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,.92); display: flex; align-items: center; justify-content: center; cursor: zoom-out; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .img-lightbox.open { opacity: 1; pointer-events: auto; }
+    .img-lightbox img { max-width: 92vw; max-height: 85vh; border-radius: 12px; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,.6); }
+
+    /* ── Spotlight / before-after slider ── */
+    .modal-spotlight-wrap { padding: 0 22px 8px; }
+    .compare-wrap { position: relative; height: 215px; border-radius: 14px; overflow: hidden; touch-action: none; user-select: none; background: #09172d; cursor: col-resize; }
+    .compare-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+    .compare-before-img { object-position: center 55%; }
+    .compare-after-img { clip-path: inset(0 0 0 50%); object-position: center 30%; }
+    .compare-divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: rgba(255,255,255,.9); box-shadow: 0 0 6px rgba(0,0,0,.5); transform: translateX(-50%); pointer-events: none; }
+    .compare-knob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 34px; height: 34px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: .75rem; color: #1a1a1a; font-weight: 900; box-shadow: 0 2px 10px rgba(0,0,0,.45); pointer-events: none; }
+    .compare-lbl { position: absolute; bottom: 10px; background: rgba(0,0,0,.55); backdrop-filter: blur(4px); color: white; font-size: .58rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; border-radius: 99px; pointer-events: none; }
+    .clbl-before { left: 10px; }
+    .clbl-after { right: 10px; }
+    .compare-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: col-resize; margin: 0; -webkit-appearance: none; appearance: none; }
   </style>
 </head>
 <body>
@@ -806,7 +836,7 @@
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-stage hero-stage--img" aria-label="Edge mascot hero">
-        <img class="hero-full-img" src="assets/hero-edge-web.png" alt="Edge, Clear Edge Solutions mascot" onerror="this.onerror=null;this.src='assets/edge-base.png';this.style.objectFit='contain';this.style.objectPosition='center bottom'">
+        <img class="hero-full-img" src="assets/edge/hero-edge-web.png" alt="Edge, Clear Edge Solutions mascot" onerror="this.onerror=null;this.src='assets/edge/edge-base.png';this.style.objectFit='contain';this.style.objectPosition='center bottom'">
       </div>
       <div class="container">
         <div class="hero-copy">
@@ -1122,7 +1152,7 @@
       <div class="container">
         <div style="border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-xl);overflow:hidden;background:linear-gradient(160deg,rgba(13,31,61,.7),rgba(2,7,18,.98));">
           <div style="width:100%;height:220px;position:relative;">
-            <img src="assets/section-edge.png" alt="Meet Edge" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+            <img src="assets/edge/section-edge.png" alt="Meet Edge" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 22%,rgba(2,7,18,.96) 95%);"></div>
             <div style="position:absolute;bottom:18px;left:18px;right:18px;">
               <div class="eyebrow" data-i18n="eyebrow.edge" style="margin-bottom:6px;">Meet Edge</div>
@@ -1358,10 +1388,16 @@
     </a>
   </nav>
 
+  <!-- Photo lightbox -->
+  <div class="img-lightbox" id="imgLightbox" role="dialog" aria-modal="true" aria-label="Photo enlarged view">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
   <!-- Service modal (bottom-sheet) -->
   <div class="modal-backdrop" id="serviceModal" aria-hidden="true">
     <div class="service-modal surface" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-header">
+        <img class="modal-header-bg" id="modalHeaderImg" src="" alt="">
         <div class="modal-handle"></div>
         <div class="modal-close-bar">
           <button class="btn btn-secondary" style="min-height:40px;padding:0 14px;font-size:.82rem;" id="modalClose" type="button">Close ×</button>
@@ -1370,9 +1406,27 @@
         <h3 id="modalTitle">Service</h3>
         <p id="modalDesc"></p>
       </div>
-      <div class="modal-art"><img id="modalImg" src="assets/edge-base.png" alt=""></div>
+      <div class="modal-art"><img id="modalImg" src="assets/edge/edge-base.png" alt=""></div>
       <div class="modal-body">
         <div class="modal-box"><h4>Common Fit</h4><ul id="modalPoints"></ul></div>
+        <!-- Before / After spotlight -->
+        <div class="modal-spotlight-wrap" id="modalSpotlightWrap" hidden>
+          <h4 class="modal-section-lbl">Project Spotlight <span class="spotlight-pill">Before → After</span></h4>
+          <div class="compare-wrap" id="modalCompare">
+            <img class="compare-img compare-before-img" id="spotBefore" src="" alt="Before">
+            <img class="compare-img compare-after-img" id="spotAfter" src="" alt="After">
+            <span class="compare-lbl clbl-before">BEFORE</span>
+            <span class="compare-lbl clbl-after">AFTER</span>
+            <div class="compare-divider" id="cmpDivider"></div>
+            <div class="compare-knob" id="cmpKnob">↔</div>
+            <input class="compare-range" id="cmpRange" type="range" min="0" max="100" value="50" aria-label="Before and after comparison">
+          </div>
+        </div>
+        <!-- How It Works steps -->
+        <div class="modal-steps-wrap" id="modalStepsWrap" hidden>
+          <h4 class="modal-section-lbl">How It Works</h4>
+          <div id="modalSteps"></div>
+        </div>
         <div class="modal-box"><h4 id="modalSideTitle">Service focus</h4><p id="modalSideCopy"></p></div>
         <div class="modal-actions">
           <a class="btn btn-primary btn-full" href="#quote" id="modalQuote">Request a Free Quote</a>
@@ -1420,18 +1474,18 @@
 
     // Service modal
     const serviceDetails = {
-      "regular-cleaning":{"img":"svc-regular-cleaning.png","kicker":"Maintenance Cleaning","title":"Regular Cleaning","desc":"Routine cleaning for residential, commercial, and operational spaces that need consistency, reliability, and clean presentation.","side":"Consistent upkeep, professionally managed","points":["Recurring or routine service scheduling","Residential and commercial environments","Structured workflow and clear expectations","Best for ongoing maintenance and presentation","Flexible around operating hours","Strong fit for managed repeat service"]},
-      "deep-cleaning":{"img":"svc-deep-cleaning.png","kicker":"Detailed Reset","title":"Deep Cleaning","desc":"A top-to-bottom reset for spaces that need stronger detailing, more attention, and a higher standard than routine service.","side":"A stronger reset for your space","points":["Detailed attention to neglected areas","Ideal before recurring service begins","Great for seasonal resets and turnovers","Helps restore a cleaner baseline","Focused on buildup, edges, and touch zones","Designed for a stronger overall reset"]},
-      "post-construction-cleaning":{"img":"svc-post-construction.png","kicker":"Project Cleaning","title":"Post-Construction Cleaning","desc":"Dust, residue, debris, and final presentation support for projects that need to be finished clean and handed off correctly.","side":"Project-ready final presentation","points":["Dust, debris, and residue removal","Careful work around newly finished surfaces","Suitable for remodels and buildouts","Prepared for handoff or occupancy","Final presentation before client walkthroughs","Built for detail after active work is complete"]},
-      "move-in-move-out-cleaning":{"img":"svc-move-cleaning.png","kicker":"Turnover Ready","title":"Move-In / Move-Out Cleaning","desc":"Cleaning for a property before move-in, after move-out, or before a final walkthrough.","side":"Ready for the next occupant","points":["Prepares spaces for new occupants","Thorough top-to-bottom cleaning","Covers appliances, floors, and fixtures","Suitable for residential and commercial","Supports leasing and property management","Aligns with move-out inspection standards"]},
-      "commercial-cleaning":{"img":"svc-commercial-cleaning.png","kicker":"Business Spaces","title":"Commercial Cleaning","desc":"Professional upkeep for offices, facilities, studios, academies, showrooms, lobbies, and client-facing spaces.","side":"Structured around your schedule","points":["Offices and co-working spaces","Retail and customer-facing environments","Studios and academies","Scheduled around your business hours","Covers common areas, restrooms, and entrances","Consistent service regardless of team"]},
-      "event-cleaning":{"img":"svc-event-cleaning.png","kicker":"Event Support","title":"Event Cleaning","desc":"Pre-event, during-event, and post-event cleaning support for venues and high-activity spaces.","side":"Timed around your event schedule","points":["Pre-event reset and preparation","Porter support during the event","Restroom monitoring and upkeep","Post-event cleanup and reset","Trash removal and area restoration","Fast and structured turnaround"]},
-      "pressure-washing":{"img":"svc-pressure-washing.png","kicker":"Exterior Care","title":"Pressure Washing","desc":"Exterior surface cleaning for entries, sidewalks, facades, driveways, patios, and other high-visibility areas.","side":"Curb appeal on demand","points":["Driveways and parking areas","Building facades and entries","Patios, decks, and pool areas","Sidewalks and walkways","Stain and buildup removal","Improves curb appeal fast"]},
-      "window-cleaning":{"img":"svc-window-cleaning.png","kicker":"Clear Finish","title":"Window Cleaning","desc":"Interior and exterior window care for spaces where clarity, polish, and detail make a visible difference.","side":"Streak-free results every time","points":["Interior and exterior service","Residential and commercial","Screens, frames, and sills","Hard water stain removal","Safe multi-story options","Works alongside deep and move cleans"]},
-      "floor-waxing-stripping":{"img":"svc-floor-waxing.png","kicker":"Floor Care","title":"Floor Waxing & Stripping","desc":"Floor restoration support that removes worn finish and rebuilds a cleaner, more durable, professional-looking surface.","side":"Restore the floor's original finish","points":["Strip old wax and buildup","Apply fresh protective finish","Best for hard commercial floors","Improves durability and shine","Available as part of deep clean","Can be scheduled during off-hours"]},
-      "move-in-out-assistance":{"img":"svc-move-cleaning.png","kicker":"Moving Support","title":"Move In / Move Out Assistance","desc":"Moving support beyond cleaning, including transition tasks, organization, setup help, and practical property readiness.","side":"Support beyond just cleaning","points":["Transition task coordination","Basic organization and staging","Property readiness checklist","Furniture arrangement support","Clear communication throughout","Flexible scope based on needs"]},
-      "handyman-services":{"img":"edge-desk.png","kicker":"Practical Support","title":"Handyman Services","desc":"Light repairs, installations, adjustments, and practical maintenance support to keep properties functional and presentation-ready.","side":"Practical support on demand","points":["Light repair and maintenance","Fixture installation","Door and hardware adjustments","Property punch list support","Coordinated with cleaning scope","Fast turnaround for urgent needs"]},
-      "consulting":{"img":"svc-consulting.png","kicker":"Operations","title":"Consulting","desc":"Operational guidance for cleaning scope, workflow design, service planning, and practical systems that improve consistency.","side":"Strategic cleaning operations support","points":["Cleaning scope and workflow design","Service planning and documentation","Systems for repeatable results","Suitable for property managers","Helps reduce cost and confusion","Available as one-time or ongoing"]}
+      "regular-cleaning":{"img":"svc-regular-cleaning.png","kicker":"Maintenance Cleaning","title":"Regular Cleaning","desc":"Routine cleaning for residential, commercial, and operational spaces that need consistency, reliability, and clean presentation.","side":"Consistent upkeep, professionally managed","points":["Recurring or routine service scheduling","Residential and commercial environments","Structured workflow and clear expectations","Best for ongoing maintenance and presentation","Flexible around operating hours","Strong fit for managed repeat service"],"steps":[{"num":"01","title":"Area prep","text":"Furniture noted, fragile items secured, and access confirmed before work begins."},{"num":"02","title":"Top-down dusting","text":"Surfaces, fixtures, and vents cleared before any floor work starts."},{"num":"03","title":"Surface wipe-down","text":"Counters, handles, sills, and high-touch zones cleaned and disinfected."},{"num":"04","title":"Floor care","text":"Vacuum and/or mop applied based on floor surface type."},{"num":"05","title":"Final walk-through","text":"Complete check to confirm all areas are covered before departure."}]},
+      "deep-cleaning":{"img":"svc-deep-cleaning.png","kicker":"Detailed Reset","title":"Deep Cleaning","desc":"A top-to-bottom reset for spaces that need stronger detailing, more attention, and a higher standard than routine service.","side":"A stronger reset for your space","points":["Detailed attention to neglected areas","Ideal before recurring service begins","Great for seasonal resets and turnovers","Helps restore a cleaner baseline","Focused on buildup, edges, and touch zones","Designed for a stronger overall reset"],"steps":[{"num":"01","title":"Assessment","text":"High-buildup areas identified and prioritized before work begins."},{"num":"02","title":"Detail surfaces","text":"Hard-to-reach areas, edges, grout, and fixtures addressed individually."},{"num":"03","title":"Appliance deep clean","text":"Interior and exterior of all appliances cleaned and degreased."},{"num":"04","title":"Full room reset","text":"All surfaces, vents, baseboards, and corners addressed top-to-bottom."},{"num":"05","title":"Quality review","text":"Thorough final check across every area before the team departs."}]},
+      "post-construction-cleaning":{"img":"svc-post-construction.png","kicker":"Project Cleaning","title":"Post-Construction Cleaning","desc":"Dust, residue, debris, and final presentation support for projects that need to be finished clean and handed off correctly.","side":"Project-ready final presentation","points":["Dust, debris, and residue removal","Careful work around newly finished surfaces","Suitable for remodels and buildouts","Prepared for handoff or occupancy","Final presentation before client walkthroughs","Built for detail after active work is complete"],"steps":[{"num":"01","img":"post-construction/pc-step-1.jpg","imgPos":"center 55%","title":"Debris & material removal","text":"Loose construction materials cleared before detailed cleaning begins."},{"num":"02","img":"post-construction/pc-before-1.jpg","imgPos":"center 62%","title":"Surface detailing","text":"Careful work around newly finished surfaces and fixtures."},{"num":"03","img":"post-construction/pc-step-2.jpg","imgPos":"center 22%","title":"Initial wash-down","text":"Surfaces rinsed to loosen residue and construction dust."},{"num":"04","img":"post-construction/pc-step-3.jpg","imgPos":"center 42%","title":"Machine scrubbing","text":"Floor equipment used to remove embedded buildup and marks."},{"num":"05","img":"post-construction/pc-after11.jpg","imgPos":"center 40%","title":"Final presentation","text":"Space left clean, polished, and ready for client walkthrough."}],"spotlight":{"before":"post-construction/pc-before-1.jpg","after":"post-construction/pc-after11.jpg","label":"Commercial buildout — Tampa Bay"}},
+      "move-in-move-out-cleaning":{"img":"svc-move-cleaning.png","kicker":"Turnover Ready","title":"Move-In / Move-Out Cleaning","desc":"Cleaning for a property before move-in, after move-out, or before a final walkthrough.","side":"Ready for the next occupant","points":["Prepares spaces for new occupants","Thorough top-to-bottom cleaning","Covers appliances, floors, and fixtures","Suitable for residential and commercial","Supports leasing and property management","Aligns with move-out inspection standards"],"steps":[{"num":"01","title":"Property walk-through","text":"Initial assessment of condition and scope confirmed on arrival."},{"num":"02","title":"Room-by-room cleaning","text":"Every vacant room cleaned top-to-bottom in sequence."},{"num":"03","title":"Fixtures & appliances","text":"Interior and exterior of all appliances and fixtures addressed."},{"num":"04","title":"Final touch-up","text":"All surfaces polished and inspection-ready."},{"num":"05","title":"Documented handoff","text":"Checklist completed and space confirmed ready for walkthrough."}]},
+      "commercial-cleaning":{"img":"svc-commercial-cleaning.png","kicker":"Business Spaces","title":"Commercial Cleaning","desc":"Professional upkeep for offices, facilities, studios, academies, showrooms, lobbies, and client-facing spaces.","side":"Structured around your schedule","points":["Offices and co-working spaces","Retail and customer-facing environments","Studios and academies","Scheduled around your business hours","Covers common areas, restrooms, and entrances","Consistent service regardless of team"],"steps":[{"num":"01","title":"Entry & lobby first","text":"High-traffic and first-impression areas addressed at the start."},{"num":"02","title":"Common areas","text":"Break rooms, hallways, and shared spaces cleaned per protocol."},{"num":"03","title":"Restroom service","text":"Full disinfection, restocking, and inspection of all restrooms."},{"num":"04","title":"Workspace cleaning","text":"Desks, floors, and surfaces cleaned based on agreed scope."},{"num":"05","title":"Departure check","text":"Final walk-through confirming all areas completed before leaving."}]},
+      "event-cleaning":{"img":"svc-event-cleaning.png","kicker":"Event Support","title":"Event Cleaning","desc":"Pre-event, during-event, and post-event cleaning support for venues and high-activity spaces.","side":"Timed around your event schedule","points":["Pre-event reset and preparation","Porter support during the event","Restroom monitoring and upkeep","Post-event cleanup and reset","Trash removal and area restoration","Fast and structured turnaround"],"steps":[{"num":"01","title":"Pre-event setup","text":"Venue prepared and presentation-ready before guests arrive."},{"num":"02","title":"Active porter support","text":"Continuous cleaning and monitoring during the event."},{"num":"03","title":"Restroom monitoring","text":"Frequent checks, replenishment, and upkeep throughout."},{"num":"04","title":"Post-event cleanup","text":"Full reset of the venue immediately after the event concludes."},{"num":"05","title":"Area restore","text":"Venue returned to original condition with all items accounted for."}]},
+      "pressure-washing":{"img":"svc-pressure-washing.png","kicker":"Exterior Care","title":"Pressure Washing","desc":"Exterior surface cleaning for entries, sidewalks, facades, driveways, patios, and other high-visibility areas.","side":"Curb appeal on demand","points":["Driveways and parking areas","Building facades and entries","Patios, decks, and pool areas","Sidewalks and walkways","Stain and buildup removal","Improves curb appeal fast"],"steps":[{"num":"01","title":"Area prep","text":"Furniture and obstacles cleared from all target surfaces."},{"num":"02","title":"Pre-soak","text":"Cleaning solution applied to loosen built-up grime and stains."},{"num":"03","title":"Pressure wash","text":"High-pressure water applied at the correct angle and safe distance."},{"num":"04","title":"Rinse","text":"Full rinse removes loosened debris and residual cleaning solution."},{"num":"05","title":"Final review","text":"Visual check for missed spots and touch-up before departure."}]},
+      "window-cleaning":{"img":"svc-window-cleaning.png","kicker":"Clear Finish","title":"Window Cleaning","desc":"Interior and exterior window care for spaces where clarity, polish, and detail make a visible difference.","side":"Streak-free results every time","points":["Interior and exterior service","Residential and commercial","Screens, frames, and sills","Hard water stain removal","Safe multi-story options","Works alongside deep and move cleans"],"steps":[{"num":"01","title":"Frame & sill prep","text":"Frames, sills, and screens cleared and wiped before glass work."},{"num":"02","title":"Interior glass","text":"Inside surfaces cleaned streak-free with professional solution."},{"num":"03","title":"Exterior glass","text":"Outside surfaces cleaned including hard-to-reach panes."},{"num":"04","title":"Detail edges","text":"Corners, seals, and frames finished by hand for a complete result."},{"num":"05","title":"Final inspection","text":"All glass reviewed for streaks or missed areas before departure."}]},
+      "floor-waxing-stripping":{"img":"svc-floor-waxing.png","kicker":"Floor Care","title":"Floor Waxing & Stripping","desc":"Floor restoration support that removes worn finish and rebuilds a cleaner, more durable, professional-looking surface.","side":"Restore the floor's original finish","points":["Strip old wax and buildup","Apply fresh protective finish","Best for hard commercial floors","Improves durability and shine","Available as part of deep clean","Can be scheduled during off-hours"],"steps":[{"num":"01","title":"Strip old finish","text":"Chemical applied and machine used to remove all existing wax layers."},{"num":"02","title":"Neutralize floor","text":"Surface cleaned to remove all residue from the stripping process."},{"num":"03","title":"First wax coat","text":"Base coat applied evenly and allowed to fully cure."},{"num":"04","title":"Build-up coats","text":"2–3 additional coats applied for durability and consistent shine."},{"num":"05","title":"Buff & review","text":"Final buff and visual inspection before floor is returned to service."}]},
+      "move-in-out-assistance":{"img":"svc-move-cleaning.png","kicker":"Moving Support","title":"Move In / Move Out Assistance","desc":"Moving support beyond cleaning, including transition tasks, organization, setup help, and practical property readiness.","side":"Support beyond just cleaning","points":["Transition task coordination","Basic organization and staging","Property readiness checklist","Furniture arrangement support","Clear communication throughout","Flexible scope based on needs"],"steps":[{"num":"01","title":"Scope review","text":"Tasks and priorities confirmed with the client before work starts."},{"num":"02","title":"Item coordination","text":"Belongings organized and staged per the agreed plan."},{"num":"03","title":"Space prep","text":"Target areas cleared, cleaned, and made ready for transition."},{"num":"04","title":"Setup & placement","text":"Furniture and items arranged according to client direction."},{"num":"05","title":"Final confirm","text":"Walk-through with client to confirm everything is in order."}]},
+      "handyman-services":{"img":"edge-desk.png","kicker":"Practical Support","title":"Handyman Services","desc":"Light repairs, installations, adjustments, and practical maintenance support to keep properties functional and presentation-ready.","side":"Practical support on demand","points":["Light repair and maintenance","Fixture installation","Door and hardware adjustments","Property punch list support","Coordinated with cleaning scope","Fast turnaround for urgent needs"],"steps":[{"num":"01","title":"Punch list review","text":"All tasks listed, scoped, and confirmed before work begins."},{"num":"02","title":"Materials check","text":"Required items confirmed on-site or sourced in advance."},{"num":"03","title":"Task execution","text":"Each item addressed in order of priority and access."},{"num":"04","title":"Quality check","text":"Completed work reviewed against the original punch list."},{"num":"05","title":"Site tidy & handoff","text":"Work area cleaned and client confirms all items resolved."}]},
+      "consulting":{"img":"svc-consulting.png","kicker":"Operations","title":"Consulting","desc":"Operational guidance for cleaning scope, workflow design, service planning, and practical systems that improve consistency.","side":"Strategic cleaning operations support","points":["Cleaning scope and workflow design","Service planning and documentation","Systems for repeatable results","Suitable for property managers","Helps reduce cost and confusion","Available as one-time or ongoing"],"steps":[{"num":"01","title":"Discovery call","text":"Current workflows, pain points, and service goals discussed."},{"num":"02","title":"Site assessment","text":"Property or operation reviewed in person where applicable."},{"num":"03","title":"Scope definition","text":"Cleaning needs and service structure outlined in detail."},{"num":"04","title":"Recommendation report","text":"Written summary with clear, actionable next steps provided."},{"num":"05","title":"Follow-up support","text":"Implementation guidance and clarification provided as needed."}]}
     };
     const modal = document.getElementById('serviceModal');
     const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
@@ -1441,9 +1495,30 @@
       document.getElementById('modalTitle').textContent = d.title;
       document.getElementById('modalDesc').textContent = d.desc;
       document.getElementById('modalImg').src = 'assets/' + d.img;
+      const headerImg = document.getElementById('modalHeaderImg');
+      if (headerImg) headerImg.src = 'assets/' + d.img;
       document.getElementById('modalSideTitle').textContent = d.side || 'Service focus';
       document.getElementById('modalSideCopy').textContent = 'Available across our Florida coverage areas. Can be adapted to different property types depending on scope, access, and scheduling.';
       document.getElementById('modalPoints').innerHTML = (d.points||[]).map(p=>'<li>'+p+'</li>').join('');
+      // Steps
+      const stepsWrap = document.getElementById('modalStepsWrap');
+      const stepsEl = document.getElementById('modalSteps');
+      if (d.steps && d.steps.length) {
+        stepsEl.innerHTML = d.steps.map(s =>
+          '<div class="modal-step">' +
+          (s.img ? '<img class="modal-step-img" src="assets/'+s.img+'" alt="" style="object-position:'+(s.imgPos||'center center')+'" onerror="this.style.display=\'none\'">' : '<div class="step-num">'+s.num+'</div>') +
+          '<div class="step-body"><strong>'+s.title+'</strong><p>'+s.text+'</p></div></div>'
+        ).join('');
+        stepsWrap.hidden = false;
+      } else { stepsWrap.hidden = true; }
+      // Spotlight
+      const spotWrap = document.getElementById('modalSpotlightWrap');
+      if (d.spotlight) {
+        document.getElementById('spotBefore').src = 'assets/' + d.spotlight.before;
+        document.getElementById('spotAfter').src = 'assets/' + d.spotlight.after;
+        spotWrap.hidden = false;
+        updateCompare(50);
+      } else { spotWrap.hidden = true; }
       modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
       modal.querySelector('.service-modal').scrollTop = 0;
     }
@@ -1453,6 +1528,18 @@
     document.getElementById('modalQuote')?.addEventListener('click', closeModal);
     modal?.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     window.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+
+    // Photo lightbox
+    const lightbox = document.getElementById('imgLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const openLightbox = src => { lightboxImg.src = src; lightbox.classList.add('open'); };
+    const closeLightbox = () => { lightbox.classList.remove('open'); lightboxImg.src = ''; };
+    document.getElementById('modalSteps')?.addEventListener('click', e => {
+      const img = e.target.closest('.modal-step-img');
+      if (img) openLightbox(img.src);
+    });
+    lightbox?.addEventListener('click', closeLightbox);
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
     // i18n
     const i18n = {
@@ -1910,6 +1997,36 @@
         }
       });
     }, { passive: true });
+
+    // ── Before/after compare slider ──
+    function updateCompare(pct) {
+      pct = Math.max(0, Math.min(100, pct));
+      const after = document.getElementById('spotAfter');
+      const div   = document.getElementById('cmpDivider');
+      const knob  = document.getElementById('cmpKnob');
+      const range = document.getElementById('cmpRange');
+      if (after) after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+      if (div)   div.style.left  = pct + '%';
+      if (knob)  knob.style.left = pct + '%';
+      if (range) range.value = pct;
+    }
+    (function() {
+      const wrap  = document.getElementById('modalCompare');
+      const range = document.getElementById('cmpRange');
+      if (!wrap) return;
+      function pctFromEvent(e) {
+        var rect = wrap.getBoundingClientRect();
+        var x = e.touches ? e.touches[0].clientX : e.clientX;
+        return (x - rect.left) / rect.width * 100;
+      }
+      if (range) range.addEventListener('input', function() { updateCompare(+range.value); });
+      var dragging = false;
+      wrap.addEventListener('mousedown',  function(e) { dragging = true; updateCompare(pctFromEvent(e)); });
+      window.addEventListener('mousemove', function(e) { if (dragging) updateCompare(pctFromEvent(e)); });
+      window.addEventListener('mouseup',   function()  { dragging = false; });
+      wrap.addEventListener('touchstart', function(e) { e.preventDefault(); updateCompare(pctFromEvent(e)); }, {passive:false});
+      wrap.addEventListener('touchmove',  function(e) { e.preventDefault(); updateCompare(pctFromEvent(e)); }, {passive:false});
+    })();
   </script>
 </body>
 </html>

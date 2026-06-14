@@ -471,35 +471,72 @@
     .field input[type="file"] { padding: 12px; color: var(--muted-2); }
     .modal-backdrop { position:fixed; inset:0; z-index:120; display:none; place-items:center; padding:22px; background:rgba(2,7,18,.78); backdrop-filter:blur(12px); }
     .modal-backdrop.open { display:grid; }
-    .service-modal { width:min(940px, 100%); max-height:min(82vh, 920px); overflow:auto; border-radius:32px; padding:0; position:relative; }
-    .modal-hero { min-height:230px; display:grid; grid-template-columns:1fr .85fr; gap:0; background:linear-gradient(135deg, rgba(16,39,76,.96), rgba(3,8,18,.98)); }
-    .modal-hero-copy { padding:34px; }
-    .modal-hero-copy h3 { font-family:Syne, Inter, sans-serif; font-size:clamp(2rem, 3.4vw, 3rem); letter-spacing:-.055em; line-height:1; margin:8px 0 14px; }
-    .modal-hero-copy p { margin:0; color:var(--muted-2); line-height:1.65; }
-    .modal-hero-img { min-height:240px; overflow:hidden; }
-    .modal-hero-img img { width:100%; height:100%; object-fit:cover; }
-    .modal-body { padding:30px 34px 34px; }
-    .modal-close { position:absolute; right:16px; top:16px; z-index:2; width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,.16); background:rgba(2,7,18,.65); color:white; font-size:1.35rem; cursor:pointer; }
-    .modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-    .modal-box { padding:20px; border-radius:22px; border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.04); }
-    .modal-box h4 { margin:0 0 12px; font-family:Syne, Inter, sans-serif; }
-    .modal-box ul { margin:0; padding-left:18px; color:var(--muted-2); line-height:1.7; }
-    .modal-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+    .service-modal { width:min(1140px, calc(100% - 40px)); height:min(86vh, 700px); display:flex; border-radius:28px; overflow:hidden; }
+    .modal-left { width:320px; flex-shrink:0; position:relative; display:flex; flex-direction:column; justify-content:flex-end; background:#020712; }
+    .modal-left-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 25%; display:block; }
+    .modal-left-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,7,18,.06) 0%, rgba(2,7,18,.58) 46%, rgba(2,7,18,.99) 75%); }
+    .modal-left-content { position:relative; z-index:2; padding:26px; }
+    .modal-left-content .eyebrow { margin-bottom:8px; }
+    .modal-left-content h3 { font-family:Syne,Inter,sans-serif; font-size:1.55rem; letter-spacing:-.05em; line-height:1.1; margin:0 0 10px; color:#fff; }
+    .modal-left-content > p { color:var(--muted); font-size:.85rem; line-height:1.6; margin:0 0 20px; }
+    .modal-right { flex:1; min-width:0; display:flex; flex-direction:column; background:rgba(3,9,20,.99); }
+    .modal-right-hd { display:flex; align-items:center; justify-content:space-between; padding:13px 22px; border-bottom:1px solid rgba(255,255,255,.07); flex-shrink:0; }
+    .modal-right-hd span { font-size:.68rem; color:var(--muted); font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .modal-close { width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05); color:#fff; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .modal-right-body { flex:1; overflow-y:auto; padding:22px; display:flex; flex-direction:column; gap:18px; }
+    .modal-box { padding:16px 18px; border-radius:18px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); }
+    .modal-box h4 { margin:0 0 10px; font-family:Syne,Inter,sans-serif; font-size:.88rem; }
+    .modal-box ul { margin:0; padding-left:16px; color:var(--muted); line-height:1.75; font-size:.85rem; display:grid; grid-template-columns:1fr 1fr; gap:2px 12px; }
+    .modal-actions { display:flex; gap:10px; flex-wrap:wrap; }
     .service-card[data-hidden="true"] { display: none; }
     .float-edge-cta { z-index:60; }
     .lang-btn { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; border:1px solid rgba(246,181,28,.35); background:rgba(246,181,28,.08); color:var(--gold-2); font-weight:900; font-size:.82rem; letter-spacing:.06em; cursor:pointer; transition:.18s ease; flex-shrink:0; }
     .lang-btn:hover { background:rgba(246,181,28,.18); border-color:rgba(246,181,28,.6); }
     @media (max-width: 980px) {
-      .about-shell, .partner-shell, .modal-hero { grid-template-columns:1fr; }
+      .about-shell, .partner-shell { grid-template-columns:1fr; }
       .partner-copy { position:static; }
       .social-shell { grid-template-columns:1fr; }
       .services-note { grid-template-columns:1fr; }
       .check-grid { grid-template-columns:1fr; }
     }
     @media (max-width: 680px) {
-      .modal-body, .modal-hero-copy { padding:24px; }
-      .modal-grid { grid-template-columns:1fr; }
       .social-strip { padding-bottom:60px; }
+    }
+
+    /* ── Modal steps & spotlight ── */
+    .modal-section-lbl { font-size:.68rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-2); margin:0 0 12px; display:flex; align-items:center; gap:8px; }
+    .spotlight-pill { font-weight:500; font-size:.62rem; letter-spacing:.04em; background:rgba(246,181,28,.12); border:1px solid rgba(246,181,28,.25); color:var(--gold-2); padding:2px 8px; border-radius:99px; text-transform:none; }
+    .modal-steps-wrap, .modal-spotlight-wrap { padding:0; }
+    .modal-steps-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
+    .modal-step { display:flex; flex-direction:column; gap:7px; padding:10px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:12px; }
+    .step-img-wrap { aspect-ratio:4/3; border-radius:7px; overflow:hidden; background:rgba(255,255,255,.06); flex-shrink:0; }
+    .modal-step-img { width:100%; height:100%; object-fit:cover; display:block; cursor:zoom-in; }
+    .step-num { width:22px; height:22px; border-radius:50%; background:rgba(246,181,28,.1); border:1px solid rgba(246,181,28,.25); display:flex; align-items:center; justify-content:center; color:var(--gold-2); font-size:.58rem; font-weight:900; flex-shrink:0; }
+    .step-body strong { display:block; font-size:.76rem; margin-bottom:2px; color:#fff; }
+    .step-body p { color:var(--muted); font-size:.7rem; line-height:1.5; margin:0; }
+    .compare-wrap { position:relative; height:260px; border-radius:14px; overflow:hidden; touch-action:none; user-select:none; background:#09172d; cursor:col-resize; }
+    .compare-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+    .compare-before-img { object-position:center 55%; }
+    .compare-after-img { clip-path:inset(0 0 0 50%); object-position:center 30%; }
+    .compare-divider { position:absolute; top:0; bottom:0; left:50%; width:2px; background:rgba(255,255,255,.9); transform:translateX(-50%); pointer-events:none; }
+    .compare-knob { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:36px; height:36px; border-radius:50%; background:white; display:flex; align-items:center; justify-content:center; font-size:.72rem; color:#1a1a1a; font-weight:900; pointer-events:none; }
+    .compare-lbl { position:absolute; bottom:10px; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); color:white; font-size:.58rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; padding:3px 9px; border-radius:99px; pointer-events:none; }
+    .clbl-before { left:12px; }
+    .clbl-after { right:12px; }
+    .compare-range { position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:col-resize; margin:0; -webkit-appearance:none; appearance:none; }
+    .img-lightbox { position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.92); display:flex; align-items:center; justify-content:center; cursor:zoom-out; opacity:0; pointer-events:none; transition:opacity .2s; }
+    .img-lightbox.open { opacity:1; pointer-events:auto; }
+    .img-lightbox img { max-width:90vw; max-height:88vh; border-radius:14px; object-fit:contain; }
+    @media (max-width:960px) {
+      .service-modal { flex-direction:column; height:min(90vh,820px); }
+      .modal-left { width:100%; height:200px; flex-shrink:0; }
+      .modal-left-img { object-position:center 20%; }
+      .modal-steps-grid { grid-template-columns:repeat(3,1fr); }
+      .modal-box ul { grid-template-columns:1fr; }
+    }
+    @media (max-width:600px) {
+      .modal-steps-grid { grid-template-columns:repeat(2,1fr); }
+      .modal-right-body { padding:16px; gap:14px; }
     }
 </style>
 </head>
@@ -551,7 +588,7 @@
           </div>
         </div>
         <div class="hero-visual" style="border-radius:42px; overflow:hidden; min-height:640px; border:1px solid rgba(246,181,28,.18); box-shadow:0 28px 80px rgba(0,0,0,.36); align-self:stretch;">
-          <img src="assets/hero-edge-mobile.png" alt="Clear Edge Solutions — Edge mascot" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:640px;" onerror="this.onerror=null;this.src='assets/edge-base.png';this.style.objectFit='contain';this.style.background='var(--navy-950)'">
+          <img src="assets/edge/hero-edge-mobile.png" alt="Clear Edge Solutions — Edge mascot" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:640px;" onerror="this.onerror=null;this.src='assets/edge/edge-base.png';this.style.objectFit='contain';this.style.background='var(--navy-950)'">
         </div>
       </div>
     </section>
@@ -559,7 +596,7 @@
     <section class="edge-rail" id="edge">
       <div class="container">
         <div class="edge-rail-card surface">
-          <div class="edge-portrait"><img src="assets/section-edge.png" alt="Meet Edge — Clear Edge Solutions mascot" style="width:100%;height:100%;object-fit:cover;object-position:center top;max-height:none;margin-bottom:0;filter:none;display:block;"></div>
+          <div class="edge-portrait"><img src="assets/edge/section-edge.png" alt="Meet Edge — Clear Edge Solutions mascot" style="width:100%;height:100%;object-fit:cover;object-position:center top;max-height:none;margin-bottom:0;filter:none;display:block;"></div>
           <div class="edge-rail-copy">
             <div class="eyebrow" data-i18n="eyebrow.edge">Meet Edge</div>
             <h2 data-i18n="edge.rail.h2">Edge represents the Clear Edge standard.</h2>
@@ -816,7 +853,7 @@
             <div>Get direction on the best service path.</div>
             <div>Send photos, timing, and priorities in one place.</div>
           </div>
-          <img src="assets/edge-base.png" alt="Edge mascot standing next to quote form">
+          <img src="assets/edge/edge-base.png" alt="Edge mascot standing next to quote form">
         </aside>
 
         <form class="form-box surface" id="quoteForm" name="clear-edge-client-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/success.html">
@@ -889,22 +926,55 @@
   </footer>
 
   <a class="float-edge-cta" href="#quote" aria-label="Ask Edge for a quote">
-    <img src="assets/edge-base.png" alt="Edge mascot icon"><span><b data-i18n="float.title">Ask Edge</b><span data-i18n="float.sub">Get a cleaning quote</span></span>
+    <img src="assets/edge/edge-base.png" alt="Edge mascot icon"><span><b data-i18n="float.title">Ask Edge</b><span data-i18n="float.sub">Get a cleaning quote</span></span>
   </a>
+
+  <!-- Photo lightbox -->
+  <div class="img-lightbox" id="imgLightbox" role="dialog" aria-modal="true" aria-label="Photo enlarged view">
+    <img id="lightboxImg" src="" alt="">
+  </div>
 
   <div class="modal-backdrop" id="serviceModal" aria-hidden="true">
     <div class="service-modal surface" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" type="button" id="modalClose" aria-label="Close service details">×</button>
-      <div class="modal-hero">
-        <div class="modal-hero-copy"><div class="eyebrow" id="modalKicker">Service Detail</div><h3 id="modalTitle">Service</h3><p id="modalDesc"></p></div>
-        <div class="modal-hero-img"><img id="modalImg" src="assets/edge-base.png" alt="Edge service visual"></div>
-      </div>
-      <div class="modal-body">
-        <div class="modal-grid">
-          <div class="modal-box"><h4 id="modalSideTitle">Service focus</h4><p id="modalSideCopy" class="soft" style="line-height:1.7;margin:0;"></p></div>
-          <div class="modal-box"><h4>Common Fit</h4><ul id="modalPoints"></ul></div>
+      <!-- Left panel: service image + info -->
+      <div class="modal-left">
+        <img class="modal-left-img" id="modalImg" src="assets/edge/edge-base.png" alt="">
+        <div class="modal-left-overlay"></div>
+        <div class="modal-left-content">
+          <div class="eyebrow" id="modalKicker">Service Detail</div>
+          <h3 id="modalTitle">Service</h3>
+          <p id="modalDesc"></p>
+          <a class="btn btn-primary btn-full" href="#quote" id="modalQuote">Request a Free Quote</a>
         </div>
-        <div class="modal-actions"><a class="btn btn-primary" href="#quote" id="modalQuote">Request a Free Quote</a><button class="btn btn-secondary" type="button" id="modalClose2">Back to Services</button></div>
+      </div>
+      <!-- Right panel: scrollable details -->
+      <div class="modal-right">
+        <div class="modal-right-hd">
+          <span>Service details</span>
+          <button class="modal-close" type="button" id="modalClose" aria-label="Close">×</button>
+        </div>
+        <div class="modal-right-body">
+          <div class="modal-spotlight-wrap" id="modalSpotlightWrap" hidden>
+            <h4 class="modal-section-lbl">Project Spotlight <span class="spotlight-pill">Before → After</span></h4>
+            <div class="compare-wrap" id="modalCompare">
+              <img class="compare-img compare-before-img" id="spotBefore" src="" alt="Before">
+              <img class="compare-img compare-after-img" id="spotAfter" src="" alt="After">
+              <span class="compare-lbl clbl-before">BEFORE</span>
+              <span class="compare-lbl clbl-after">AFTER</span>
+              <div class="compare-divider" id="cmpDivider"></div>
+              <div class="compare-knob" id="cmpKnob">↔</div>
+              <input class="compare-range" id="cmpRange" type="range" min="0" max="100" value="50" aria-label="Before and after comparison">
+            </div>
+          </div>
+          <div class="modal-box"><h4>Common Fit</h4><ul id="modalPoints"></ul></div>
+          <div class="modal-steps-wrap" id="modalStepsWrap" hidden>
+            <h4 class="modal-section-lbl">How It Works</h4>
+            <div class="modal-steps-grid" id="modalSteps"></div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-secondary" type="button" id="modalClose2">Back to Services</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -936,6 +1006,89 @@
     }));
 
     const serviceDetails = {"regular-cleaning": {"img": "svc-regular-cleaning.png", "kicker": "Maintenance Cleaning", "title": "Regular Cleaning", "desc": "Routine cleaning for residential, commercial, and operational spaces that need consistency, reliability, and clean presentation.", "side": "Consistent upkeep, professionally managed", "points": ["Recurring or routine service scheduling", "Residential and commercial environments", "Structured workflow and clear expectations", "Best for ongoing maintenance and presentation", "Flexible around operating hours", "Strong fit for managed repeat service"]}, "deep-cleaning": {"img": "svc-deep-cleaning.png", "kicker": "Detailed Reset", "title": "Deep Cleaning", "desc": "A top-to-bottom reset for spaces that need stronger detailing, more attention, and a higher standard than routine service.", "side": "A stronger reset for your space", "points": ["Detailed attention to neglected areas", "Ideal before recurring service begins", "Great for seasonal resets and turnovers", "Helps restore a cleaner baseline", "Focused on buildup, edges, and touch zones", "Designed for a stronger overall reset"]}, "post-construction-cleaning": {"img": "svc-post-construction.png", "kicker": "Project Cleaning", "title": "Post-Construction Cleaning", "desc": "Dust, residue, debris, and final presentation support for projects that need to be finished clean and handed off correctly.", "side": "Project-ready final presentation", "points": ["Dust, debris, and residue removal", "Careful work around newly finished surfaces", "Suitable for remodels and buildouts", "Prepared for handoff or occupancy", "Final presentation before client walkthroughs", "Built for detail after active work is complete"]}, "move-in-move-out-cleaning": {"img": "svc-move-cleaning.png", "kicker": "Turnover Ready", "title": "Move-In / Move-Out Cleaning", "desc": "Cleaning for a property before move-in, after move-out, or before a final walkthrough.", "side": "Ready for the next occupant", "points": ["Prepares spaces for transition", "Focused on vacancy-ready presentation", "Useful for tenants, owners, and managers", "Can be paired with additional support services", "Supports faster turnover windows", "Helps reduce handoff issues at transition"]}, "commercial-cleaning": {"img": "edge-vacuum.png", "kicker": "Business Spaces", "title": "Commercial Cleaning", "desc": "Professional upkeep for offices, facilities, studios, academies, showrooms, lobbies, and client-facing spaces.", "side": "Support for operational spaces", "points": ["Offices and business environments", "Professional communication and scheduling", "Reliable ongoing support", "Managed with active oversight", "Built around presentation and uptime", "Adaptable to recurring or custom scopes"]}, "event-cleaning": {"img": "svc-event-cleaning.png", "kicker": "Event Support", "title": "Event Cleaning", "desc": "Pre-event, during-event, and post-event cleaning support for venues and high-activity spaces.", "side": "Cleaning support around the event schedule", "points": ["Pre-event setup cleaning", "During-event porter support", "Restroom checks and trash handling", "Post-event resets", "Indoor and outdoor coordination", "Useful for high-traffic spaces"]}, "pressure-washing": {"img": "svc-pressure-washing.png", "kicker": "Exterior Care", "title": "Pressure Washing", "desc": "Exterior surface cleaning for entries, sidewalks, facades, driveways, patios, and other high-visibility areas.", "side": "Exterior impact that shows", "points": ["Driveways, patios, and exterior surfaces", "Improves appearance quickly", "Useful before events or listings", "Can complement broader property cleanup", "Targets visible outdoor buildup", "Strong curb-appeal improvement service"]}, "window-cleaning": {"img": "svc-window-cleaning.png", "kicker": "Clear Finish", "title": "Window Cleaning", "desc": "Interior and exterior window care for spaces where clarity, polish, and detail make a visible difference.", "side": "Clearer finish, better presentation", "points": ["Interior and exterior options", "Improves visual presentation", "Suitable for homes and businesses", "Pairs well with deep or move-related cleaning", "Helps spaces feel brighter and cleaner", "Ideal final touch before showings or events"]}, "floor-waxing-stripping": {"img": "svc-floor-waxing.png", "kicker": "Floor Care", "title": "Floor Waxing & Stripping", "desc": "Floor restoration support that removes worn finish and rebuilds a cleaner, more durable, professional-looking surface.", "side": "Restore the look of your floors", "points": ["Remove old finish and buildup", "Restore shine and uniform appearance", "Improves long-term floor presentation", "Best for hard-surface commercial floors", "Supports cleaner facility appearance", "Rebuilds a more durable visual finish"]}, "move-in-out-assistance": {"img": "svc-move-cleaning.png", "kicker": "Moving Support", "title": "Move In / Move Out Assistance", "desc": "Moving support beyond cleaning, including transition tasks, organization, setup help, and practical property readiness.", "side": "More than cleaning support", "points": ["Support around transition and setup", "Can complement cleaning services", "Helps simplify move-related logistics", "Flexible based on property needs", "Useful when timing and coordination matter", "Helps reduce friction during moving days"]}, "handyman-services": {"img": "edge-desk.png", "kicker": "Practical Support", "title": "Handyman Services", "desc": "Light repairs, installations, adjustments, and practical maintenance support to keep properties functional and presentation-ready.", "side": "Small fixes that make a difference", "points": ["Light repairs and simple installations", "Supports property readiness", "Convenient add-on to cleaning scope", "Practical for punch-list style needs", "Helps close out minor outstanding tasks", "Useful before inspections or turnover"]}, "consulting": {"img": "svc-consulting.png", "kicker": "Operations", "title": "Consulting", "desc": "Operational guidance for cleaning scope, workflow design, service planning, and practical systems that improve consistency.", "side": "Practical guidance, cleaner execution", "points": ["Service planning and workflow design", "Scope review and operational guidance", "Useful for scaling or reorganizing", "Focused on practical implementation", "Improves consistency and accountability", "Built around real-world service operations"]}};
+    // ── Service steps & spotlight data ──
+    serviceDetails['regular-cleaning'].steps = [
+      {num:'01',title:'Property walkthrough',text:'We review scope, surface types, and any specific areas to prioritize.'},
+      {num:'02',title:'Surface prep & declutter',text:'Loose items cleared and surfaces prepared before cleaning begins.'},
+      {num:'03',title:'Full-space cleaning',text:'All rooms serviced in a consistent order for thorough coverage.'},
+      {num:'04',title:'Touch zones & detail pass',text:'High-contact surfaces, corners, and edges addressed.'},
+      {num:'05',title:'Final check & sign-off',text:'Space reviewed before we leave to confirm the standard is met.'}
+    ];
+    serviceDetails['deep-cleaning'].steps = [
+      {num:'01',title:'Scope assessment',text:'We identify buildup areas, neglected zones, and priority surfaces.'},
+      {num:'02',title:'Baseline cleaning pass',text:'General surface cleaning done first to reveal what needs extra attention.'},
+      {num:'03',title:'Detail scrubbing',text:'Grout, baseboards, appliances, and hard-to-reach areas addressed thoroughly.'},
+      {num:'04',title:'Fixture & surface polish',text:'Fixtures wiped, mirrors polished, high-touch areas sanitized.'},
+      {num:'05',title:'Final walkthrough',text:'Full review before completion to confirm the reset is complete.'}
+    ];
+    serviceDetails['post-construction-cleaning'].steps = [
+      {num:'01',img:'post-construction/pc-step-1.jpg',imgPos:'center 55%',title:'Debris & material removal',text:'Loose construction materials cleared before detailed cleaning begins.'},
+      {num:'02',img:'post-construction/pc-before-1.jpg',imgPos:'center 62%',title:'Surface detailing',text:'Careful work around newly finished surfaces and fixtures.'},
+      {num:'03',img:'post-construction/pc-step-2.jpg',imgPos:'center 22%',title:'Initial wash-down',text:'Surfaces rinsed to loosen residue and construction dust.'},
+      {num:'04',img:'post-construction/pc-step-3.jpg',imgPos:'center 42%',title:'Machine scrubbing',text:'Floor equipment used to remove embedded buildup and marks.'},
+      {num:'05',img:'post-construction/pc-after11.jpg',imgPos:'center 40%',title:'Final presentation',text:'Space left clean, polished, and ready for client walkthrough.'}
+    ];
+    serviceDetails['post-construction-cleaning'].spotlight = {
+      before:'post-construction/pc-before-1.jpg',
+      after:'post-construction/pc-after11.jpg',
+      label:'Commercial buildout — Tampa Bay'
+    };
+    serviceDetails['move-in-move-out-cleaning'].steps = [
+      {num:'01',title:'Property condition review',text:'We walk through the space and document its current state before starting.'},
+      {num:'02',title:'Full-space deep clean',text:'Every room addressed top to bottom, including storage areas and closets.'},
+      {num:'03',title:'Kitchen & bath detail',text:'Appliances, fixtures, cabinets, and tile thoroughly cleaned inside and out.'},
+      {num:'04',title:'Final walkthrough',text:'Space confirmed ready for the next occupant or inspection.'}
+    ];
+    serviceDetails['commercial-cleaning'].steps = [
+      {num:'01',title:'Facility review & schedule',text:'Scope, access, frequency, and priority zones confirmed before work begins.'},
+      {num:'02',title:'Common areas & entry',text:'Lobbies, hallways, and shared spaces cleaned for first-impression presentation.'},
+      {num:'03',title:'Workspaces & surfaces',text:'Desks, stations, and high-touch zones sanitized consistently.'},
+      {num:'04',title:'Restrooms & break areas',text:'Sanitized and restocked per the agreed service scope.'}
+    ];
+    serviceDetails['event-cleaning'].steps = [
+      {num:'01',title:'Pre-event setup clean',text:'Venue cleaned and prepared before guests arrive.'},
+      {num:'02',title:'During-event porter support',text:'Ongoing trash handling, restroom checks, and spot cleaning during the event.'},
+      {num:'03',title:'Spill & incident response',text:'Quick response to any messes or issues that come up mid-event.'},
+      {num:'04',title:'Post-event reset',text:'Trash removed, surfaces wiped, and space restored after the event ends.'},
+      {num:'05',title:'Final walkthrough',text:'Venue confirmed clean and ready for next use or handoff.'}
+    ];
+    serviceDetails['pressure-washing'].steps = [
+      {num:'01',title:'Surface inspection',text:'We identify stains, buildup, and delicate areas before starting.'},
+      {num:'02',title:'Pre-treatment',text:'Degreasers or detergents applied to tough buildup where needed.'},
+      {num:'03',title:'High-pressure wash',text:'Surface cleaned with appropriate pressure per material type.'},
+      {num:'04',title:'Rinse & review',text:'Surface rinsed clear and reviewed for uniform coverage.'}
+    ];
+    serviceDetails['window-cleaning'].steps = [
+      {num:'01',title:'Frame & sill wipe-down',text:'Frames, sills, and tracks cleared of dust and debris.'},
+      {num:'02',title:'Glass scrub',text:'Interior and exterior glass scrubbed to loosen buildup and residue.'},
+      {num:'03',title:'Squeegee finish',text:'Clean squeegee pass for a streak-free result.'},
+      {num:'04',title:'Detail & edge clean',text:'Edges and corners wiped for a polished, uniform finish.'}
+    ];
+    serviceDetails['floor-waxing-stripping'].steps = [
+      {num:'01',title:'Floor prep & clearing',text:'Area cleared and floor surface swept before any product is applied.'},
+      {num:'02',title:'Stripping old finish',text:'Chemical stripper applied and floor scrubbed to remove worn layers.'},
+      {num:'03',title:'Rinse & dry',text:'Floor rinsed thoroughly and allowed to dry completely.'},
+      {num:'04',title:'Wax application',text:'New finish applied in even coats and buffed to a uniform shine.'}
+    ];
+    serviceDetails['move-in-out-assistance'].steps = [
+      {num:'01',title:'Needs assessment',text:'We review the scope — what needs to move, organize, or be set up.'},
+      {num:'02',title:'Item handling & placement',text:'Furniture, boxes, and belongings handled and placed per your direction.'},
+      {num:'03',title:'Organization support',text:'Items sorted and arranged to make the space functional from day one.'},
+      {num:'04',title:'Final review',text:'Space confirmed ready and any remaining tasks addressed.'}
+    ];
+    serviceDetails['handyman-services'].steps = [
+      {num:'01',title:'Punch list review',text:'Tasks identified and prioritized — repairs, installations, or adjustments needed.'},
+      {num:'02',title:'Materials check',text:'Confirm all parts and tools are on hand before work begins.'},
+      {num:'03',title:'Task execution',text:'Each item addressed efficiently with minimal disruption to the space.'},
+      {num:'04',title:'Test & confirm',text:'Completed work tested and reviewed before sign-off.'}
+    ];
+    serviceDetails['consulting'].steps = [
+      {num:'01',title:'Initial scope review',text:'We review your current cleaning operations, workflows, and pain points.'},
+      {num:'02',title:'Gap analysis',text:'Key inconsistencies, accountability gaps, and efficiency issues identified.'},
+      {num:'03',title:'Recommendations & plan',text:'Practical, actionable guidance delivered for your specific situation.'},
+      {num:'04',title:'Implementation support',text:'Follow-up available to help put the plan into practice.'}
+    ];
+
     const modal = document.getElementById('serviceModal');
     const modalClose = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); };
     function openService(id) {
@@ -944,12 +1097,34 @@
       document.getElementById('modalKicker').textContent = data.kicker || 'Service Detail';
       document.getElementById('modalTitle').textContent = data.title;
       document.getElementById('modalDesc').textContent = data.desc;
-      document.getElementById('modalImg').src = 'assets/' + data.img;
-      document.getElementById('modalImg').alt = 'Edge representing ' + data.title;
-      document.getElementById('modalSideTitle').textContent = data.side || 'Service focus';
-      document.getElementById('modalSideCopy').textContent = 'This service is available across our active Florida coverage areas and can be adapted to different property types depending on scope, access, and scheduling requirements.';
+      const heroImg = document.getElementById('modalImg');
+      heroImg.src = 'assets/' + data.img;
+      heroImg.alt = data.title;
       document.getElementById('modalPoints').innerHTML = (data.points || []).map(p => '<li>' + p + '</li>').join('');
+      // Steps
+      const stepsWrap = document.getElementById('modalStepsWrap');
+      const stepsEl = document.getElementById('modalSteps');
+      if (data.steps && data.steps.length) {
+        stepsEl.innerHTML = data.steps.map(s =>
+          '<div class="modal-step">' +
+          (s.img
+            ? '<div class="step-img-wrap"><img class="modal-step-img" src="assets/'+s.img+'" style="object-position:'+(s.imgPos||'center center')+'" alt="" onerror="this.parentElement.style.display=\'none\'"></div>'
+            : '') +
+          '<div class="step-num">'+s.num+'</div>' +
+          '<div class="step-body"><strong>'+s.title+'</strong><p>'+s.text+'</p></div></div>'
+        ).join('');
+        stepsWrap.hidden = false;
+      } else { stepsWrap.hidden = true; }
+      // Spotlight
+      const spotWrap = document.getElementById('modalSpotlightWrap');
+      if (data.spotlight) {
+        document.getElementById('spotBefore').src = 'assets/' + data.spotlight.before;
+        document.getElementById('spotAfter').src = 'assets/' + data.spotlight.after;
+        spotWrap.hidden = false;
+        updateCompare(50);
+      } else { spotWrap.hidden = true; }
       modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+      const rb = modal.querySelector('.modal-right-body'); if (rb) rb.scrollTop = 0;
     }
     cards.forEach(card => card.addEventListener('click', () => openService(card.dataset.service)));
     document.getElementById('modalClose')?.addEventListener('click', modalClose);
@@ -957,6 +1132,18 @@
     document.getElementById('modalQuote')?.addEventListener('click', modalClose);
     modal?.addEventListener('click', (e) => { if (e.target === modal) modalClose(); });
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') modalClose(); });
+
+    // Photo lightbox
+    const lightbox = document.getElementById('imgLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const openLightbox = src => { lightboxImg.src = src; lightbox.classList.add('open'); };
+    const closeLightbox = () => { lightbox.classList.remove('open'); lightboxImg.src = ''; };
+    document.getElementById('modalSteps')?.addEventListener('click', e => {
+      const img = e.target.closest('.modal-step-img');
+      if (img) openLightbox(img.src);
+    });
+    lightbox?.addEventListener('click', closeLightbox);
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
     // ── i18n ──────────────────────────────────────────────────────────
     const i18n = {
@@ -1200,6 +1387,36 @@
     document.querySelector('.footer-links a[href="#partner"]')?.addEventListener('click', e => { e.preventDefault(); openPartnerPage(); });
     // Mobile menu partner link
     document.querySelector('.mobile-menu a[href="#partner"]')?.addEventListener('click', e => { e.preventDefault(); mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); openPartnerPage(); });
+
+    // ── Before/after compare slider ──
+    function updateCompare(pct) {
+      pct = Math.max(0, Math.min(100, pct));
+      const after = document.getElementById('spotAfter');
+      const div   = document.getElementById('cmpDivider');
+      const knob  = document.getElementById('cmpKnob');
+      const range = document.getElementById('cmpRange');
+      if (after) after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+      if (div)   div.style.left  = pct + '%';
+      if (knob)  knob.style.left = pct + '%';
+      if (range) range.value = pct;
+    }
+    (function() {
+      const wrap  = document.getElementById('modalCompare');
+      const range = document.getElementById('cmpRange');
+      if (!wrap) return;
+      function pctFromEvent(e) {
+        var rect = wrap.getBoundingClientRect();
+        var x = e.touches ? e.touches[0].clientX : e.clientX;
+        return (x - rect.left) / rect.width * 100;
+      }
+      if (range) range.addEventListener('input', function() { updateCompare(+range.value); });
+      var dragging = false;
+      wrap.addEventListener('mousedown',  function(e) { dragging = true; updateCompare(pctFromEvent(e)); });
+      window.addEventListener('mousemove', function(e) { if (dragging) updateCompare(pctFromEvent(e)); });
+      window.addEventListener('mouseup',   function()  { dragging = false; });
+      wrap.addEventListener('touchstart', function(e) { e.preventDefault(); updateCompare(pctFromEvent(e)); }, {passive:false});
+      wrap.addEventListener('touchmove',  function(e) { e.preventDefault(); updateCompare(pctFromEvent(e)); }, {passive:false});
+    })();
   </script>
 </body>
 
